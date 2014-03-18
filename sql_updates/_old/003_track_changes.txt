@@ -1,0 +1,42 @@
+-- ALREADY APPLIED EVERYWHERE
+
+-- should not be tracked
+DELETE FROM track WHERE url = '/index.php?cmd=update_question_stream';
+
+-- to determine how long it can be
+ALTER TABLE track CHANGE COLUMN `agent` `agent` TEXT;
+
+-- execcive flag to mark bots
+ALTER TABLE track ADD COLUMN `f_bot` tinyint(4) DEFAULT 0 AFTER referrer;
+-- renew f_bot flag
+UPDATE track SET f_bot = 1
+WHERE
+agent like '%Googlebot%'
+or agent like '%Sosospider%'
+or agent like '%ezooms.bot%'
+or agent like '%lufsbot%'
+or agent like '%AhrefsBot%'
+or agent like '%Baiduspider%'
+or agent like '%crawler@alexa.com%'
+or agent like '%Sogou web spider%'
+or agent like '%Exabot%'
+or agent like '%200PleaseBot%'
+or agent like '%SeznamBot%'
+
+-- to track visits
+ALTER TABLE track ADD COLUMN `visit_id` varchar(32) DEFAULT NULL AFTER session_id;
+-- visit_id for previous logs will be set to session_id.
+UPDATE track SET visit_id=session_id;
+
+-- execcive sign to see when visit starts
+ALTER TABLE track ADD COLUMN `f_visit` tinyint(4) DEFAULT 0 AFTER f_first;
+
+-- renew f_visit flag
+CREATE TEMPORARY TABLE track_ids_temp as
+SELECT MIN(id) as id FROM track
+GROUP BY session_id;
+
+UPDATE track SET f_visit=1
+WHERE id IN (SELECT id from track_ids_temp);
+
+DROP TABLE track_ids_temp;

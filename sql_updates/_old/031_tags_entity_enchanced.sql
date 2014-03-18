@@ -1,0 +1,1 @@
+ALTER TABLE tag ADD COLUMN `logo_id` int(11) NOT NULL default '0';

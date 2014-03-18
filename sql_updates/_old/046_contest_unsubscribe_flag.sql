@@ -1,0 +1,1 @@
+ALTER TABLE user ADD COLUMN `notify_contest` tinyint(4) NOT NULL DEFAULT 1 AFTER notify_product_update;

@@ -1,0 +1,1 @@
+ALTER TABLE notifications ADD COLUMN `reason` enum('my_post_commented','post_i_commented_commented') NOT NULL default 'my_post_commented' AFTER post_id;

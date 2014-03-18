@@ -1,0 +1,1 @@
+ALTER TABLE user ADD COLUMN f_anonym_allowed tinyint(1) NOT NULL DEFAULT 0 AFTER f_auto_allowed;

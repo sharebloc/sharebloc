@@ -1,0 +1,253 @@
+.contest_image_block {
+    background: url('/images/contest_marketo_bg.png') 50% 0% no-repeat #2f343d;
+    color: white;
+    height: 600px;
+    max-height: 600px;
+    border-bottom: none;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.contest_image_btn {
+    background: #E4E4E4;
+    border-radius: 30px;
+    border: 3px solid #FFFFFF;
+    color: #005598;
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    padding: 5px;
+    text-shadow: #2F343D 0.1em 0.1em 0.2em;
+    cursor: pointer;
+    margin-top: 300px;
+}
+
+.contest_image_btn:hover {
+    background: #F3F3F3
+}
+
+.summit_block {
+    background-color: #E4E4E4;
+    border-bottom: 3px solid #2F343D;
+    padding: 60px 0;
+    width: 100%;
+    color: #2F343D;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.marketo_summit_logo {
+    padding: 50px 0 20px 0;
+}
+
+.contest_rules {
+    font-size: 18px;
+    padding-bottom: 40px;
+}
+
+.contest_rules a {
+    color: #2F343D;
+}
+
+.sponsors_div {
+    height: 512px;
+}
+
+.sponsor_links_block {
+    background-color: #FFFFFF;
+    padding: 60px 0 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.sponsor_links_block .text {
+    color: #2F343D;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.sponsor_sub_block {
+    margin: 15px 0;
+}
+
+.main_sponsor_block {
+    margin: 15px 0;
+}
+
+.other_sponsors_block {
+    margin: 20px 0;
+}
+
+.other_sponsors_block img {
+    margin: 0 15px 0 15px;
+    vertical-align: middle;
+}
+.contest_sponsors_banner {
+    text-align: center;
+}
+.sponsors_header {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+}
+.contest_sponsors_banner .main_sponsor_block{
+    margin: 5px 0;
+}
+.contest_sponsors_banner .other_sponsors_block{
+    margin: 5px 0;
+    vertical-align: middle;
+}
+
+.contest_votes_block {
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 70px;
+    background-color: #2F343D;
+    margin-bottom: 30px;
+    text-align: right;
+    padding: 20px 0;
+}
+
+.contest_widget_img {
+    width: 185px;
+    height: 70px;
+}
+/*
+.contest_votes_block.inside_show_post {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+}
+.contest_votes_block.inside_nominations_page {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 35px;
+}*/
+.contest_votes_block.at_top {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.votes_submit_link {
+    color: #00AEEF;
+    cursor: pointer;
+}
+
+.standard_popup.wide {
+    width: 800px;
+    top: 150px;
+    left: 40%; /* todo review*/
+}
+
+.standard_popup.contest_rules_popup {
+    width: 600px;
+    top: 150px;
+}
+
+.nominations_div {
+    margin-top: 35px;
+    border-top: 1px solid #CACACA;
+}
+
+.post_container.nomin_post {
+    padding: 10px;
+    border: 1px solid #CACACA;
+    border-top: none;
+    width: 50%;
+    float: left;
+    font-size: 14px;
+    position: relative;
+    height: 86px;
+}
+
+.nomin_post:nth-child(even) {
+    border-left: none;
+}
+
+.post_container.nomin_post:last-child {
+    border-right: 1px solid #CACACA;
+}
+
+.nomin_post_left_div {
+    float: left;
+    width: 25px;
+    text-align: center;
+}
+.nomin_post_right_div {
+    float: left;
+    width: 450px;
+    padding-left: 30px;
+    margin-top: 10px;
+}
+
+.nomin_post_number {
+    font-weight: bold;
+    margin-bottom: 3px;
+    width: 100%;
+
+}
+.nomin_post_votes_block {
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0 auto;
+    max-width: 20px;
+    width: 20px;
+}
+
+.nomin_post a.post_outer_link{
+    color: #005598;
+    font-size: 14px;
+    font-weight: normal;
+}
+.nomin_post_by_div {
+    width: 100%;
+    margin: 10px 0 5px 0;
+}
+.nomin_post .post_delete_btn_div{
+    right: 10px;
+    top: 10px;
+}
+
+#rules_popup_tweet_btn {
+    line-height: 14px;
+    margin-right: 15px;
+    float: right;
+    margin-top: 6px;
+    border: 1px solid #8D8D8D;
+    border-radius: 2px;
+}
+/* CONTEST RULES POPUP */
+.contest_rules_content p{
+    margin-bottom: 13px;
+}
+
+.contest_rules_subcontent {
+    margin-left: 40px;
+}
+
+.contest_rules_subheader {
+    font-weight: bold;
+}
+
+.post_type_link {
+    cursor: default;
+}
+
+.f_contest.right_rail_content.at_top {
+    position: fixed;
+    top: 130px;
+}
+
+.cancel_btn.submit_votes_close_btn {
+    padding: 5px;
+}
+
+.arrow_down {
+    display: none !important;
+}

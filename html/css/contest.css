@@ -1,0 +1,519 @@
+.contest_image_block {
+    background: url('/images/contest_bg.png') 50% 0% no-repeat white;
+    color: white;
+    height: 540px;
+    max-height: 540px;
+    border-bottom: none;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.contest_image_text {
+    border: 5px solid #F3F3F3;
+    color: #FFFFFF;
+    width: 600px;
+    font-size: 40px;
+    letter-spacing: 1px;
+    line-height: 60px;
+    padding: 15px;
+    text-shadow: #2F343D 0.1em 0.1em 0.2em;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+}
+
+.contest_image_btn {
+    background: #F58723;
+    border-radius: 30px;
+    color: #FFFFFF;
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    padding: 5px;
+    text-shadow: #2F343D 0.1em 0.1em 0.2em;
+    cursor: pointer;
+}
+
+.contest_experts_block {
+    background-color: #00AEEF;
+}
+
+.experts_block_content {
+    padding-bottom: 45px;
+    padding-top: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    text-align: center;
+}
+.contest_experts_text {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    line-height: 36px;
+    margin: 0 auto 0 auto;
+}
+
+.experts_div {
+    margin-top: 60px;
+}
+
+.expert_div {
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+    margin-bottom: 30px;
+    vertical-align: top;
+}
+
+.expert_img {
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    height: 104px;
+    width: 104px;
+    margin-bottom: 5px;
+}
+
+.expert_name {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.expert_position {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.expert_position a{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.expert_div .user_links {
+    display: inline-block;
+    color: #005598;
+    padding: 0;
+}
+
+.expert_div .user_links img {
+    height: 20px;
+    margin: 0 3px;
+    width: 20px;
+}
+
+.experts_text1 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.contest_votes_block {
+    color: #FFFFFF;
+    font-size: 24px;
+    height: 80px;
+    line-height: 80px;
+    background-color: #2F343D;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.contest_votes_block.inside_show_post {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+}
+.contest_votes_block.inside_nominations_page {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 35px;
+}
+.contest_votes_block.at_top {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.f_contest.right_rail_content.at_top {
+    top: 95px;
+}
+
+.votes_left_count {
+    color: #F58723;
+}
+
+.votes_submit_link {
+    color: #00AEEF;
+    cursor: pointer;
+}
+
+.twitter_icon {
+    margin: 0 3px;
+    height: 18px;
+    width: 18px;
+}
+
+.submit_votes_close_btn {
+    margin-right: 10px;
+    color: #8D8D8D;
+    font-size: 11px;
+    line-height: 28px; /* Todo should not be hardcoded as depend on share_post_btn height */
+}
+
+.votes_thanks_div {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.back_to_contest_div {
+    position: absolute;
+    left: 15px;
+}
+
+.back_to_contest_div a {
+    color: #00AEEF
+}
+
+.back_to_contest_div a:hover {
+    color: #06B5F4
+}
+
+.contest_end_text {
+    color: #ffffff;
+}
+
+.contest_end_text.at_right {
+    position: absolute;
+    right: 15px;
+    font-weight: normal;
+}
+
+/* CONTEST POSTS */
+
+.contest_post .arrow_active, .nomin_post .arrow_active {
+    /* votes are forbidden for contest now */
+    cursor: default;
+}
+.contest_post .arrow_active:hover, .nomin_post .arrow_active:hover {
+    border-color: #005598 transparent;
+}
+
+.contest_post.below_top * {
+    color: #cacaca !important;
+}
+
+.contest_post.below_top .arrow_active {
+    border-bottom-color: #cacaca !important;
+    border-top-color: #cacaca !important;
+}
+
+.contest_post.below_top .front_image_div,
+.contest_post.below_top .user_links,
+.contest_post.below_top .contest_author_logo {
+    opacity: 0.6;
+}
+
+.contest_post .post_main_div {
+    max-width: 608px;
+    width: 608px;
+    padding-left: 5px;
+}
+.contest_post_left_div {
+    float: left;
+    width: 40px;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.contest_post .post_vote_div {
+    display: inline-block;
+    float: none;
+}
+
+.contest_post_number {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.contest_post .front_image_div {
+    float: left;
+    max-width: 180px;
+    margin-right: 15px;
+    height: 100px;
+    width: 180px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+}
+.contest_post .front_image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    display: none;
+}
+
+.contest_post .post_details {
+    float: left;
+    max-width: 390px;
+}
+
+.contest_post .post_details.wide {
+    float: left;
+    max-width: 100%;
+    width: 100%;
+}
+
+.contest_post .post_title a {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2F343D;
+    margin-right: 5px;
+    line-height: 22px;
+}
+
+.contest_post .subdetails {
+    color: #8D8D8D;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.contest_post .post_author_link {
+    color: #005598;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.contest_post .post_outer_link {
+    color: #005598;
+    font-size: inherit;
+    font-weight: bold;
+}
+.contest_post .post_outer_link_bottom, .contest_post .comment_action_link {
+    font-size: 11px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.contest_post .post_category_link {
+    color: #005598;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.contest_post .post_footer_div {
+    margin-top: 8px;
+}
+
+.nominated_by_div {
+    font-size: 14px;
+    width: 100%;
+    line-height: 30px;
+    margin: 10px 0 15px 0;
+}
+
+.contest_author_logo {
+    border-radius: 50%;
+    display: inline-block;
+    float: left;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.contest_post .post_author_link {
+    color: #005598;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.nominated_author_link {
+    color: #005598;
+}
+
+.contest_post .user_links {
+    float: right;
+    padding: 0;
+}
+
+.contest_post .user_links img {
+    vertical-align: middle;
+}
+
+.contest_post .tweet_link {
+    margin-right: 15px;
+}
+.contest_post .share_links {
+    float: right;
+}
+
+.contest_post .post_footer_div {
+    font-size: 12px;
+    width: 100%;
+}
+
+.contest_post .post_delete_btn_div {
+    position: static;
+    top: auto;
+    right: auto;
+    margin: 15px auto 0 auto;
+    width: 20px;
+}
+
+/* RIGHT RAIL */
+.contest_nominate_link {
+    background-color: #00AEEF;
+    border-radius: 4px;
+    color: #FFFFFF;
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 11px 0;
+    text-align: center;
+    text-shadow: #2F343D 0.1em 0.1em 0.2em;
+}
+
+.contest_nominate_link:hover {
+    background-color: #f15a4f;
+    color: #ffffff;
+}
+
+.contest_right_rail_margin {
+    margin-top: 36px;
+}
+
+.all_nominations_img {
+    display: inline-block;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 30px;
+}
+
+.sales_marketing_img {
+    border-radius: 4px;
+    height: 80px;
+    width: 80px;
+    margin-right: 9px;
+    vertical-align: middle;
+    float: left;
+}
+
+.vote_best_sales_first_line {
+    margin-bottom: 15px;
+}
+
+/* ALL CONTESTS POSTS */
+.nominations_div {
+    margin-top: 35px;
+    border-top: 1px solid #CACACA;
+}
+.post_container.nomin_post {
+    padding: 10px;
+    border: 1px solid #CACACA;
+    border-top: none;
+    width: 50%;
+    float: left;
+    font-size: 14px;
+    position: relative;
+    height: 86px;
+}
+
+.nomin_post:nth-child(even) {
+    border-left: none;
+}
+
+.post_container.nomin_post:last-child {
+    border-right: 1px solid #CACACA;
+}
+
+.nomin_post_left_div {
+    float: left;
+    width: 25px;
+    text-align: center;
+}
+.nomin_post_right_div {
+    float: left;
+    width: 450px;
+    padding-left: 30px;
+    margin-top: 10px;
+}
+
+.nomin_post_number {
+    font-weight: bold;
+    margin-bottom: 3px;
+    width: 100%;
+
+}
+.nomin_post_votes_block {
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0 auto;
+    max-width: 20px;
+    width: 20px;
+}
+
+.nomin_post a.post_outer_link{
+    color: #005598;
+    font-size: 14px;
+    font-weight: normal;
+}
+.nomin_post_by_div {
+    width: 100%;
+    margin: 10px 0 5px 0;
+}
+.nomin_post .post_delete_btn_div{
+    right: 10px;
+    top: 10px;
+}
+
+.nominations_div .front_loader_div {
+    margin-top: 15px;
+}
+
+/* popup */
+.standard_popup.contest_popup {
+    width: 470px;
+    font-size: 13px;
+}
+
+/* END OF CONTEST PAGE */
+/* ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** */
+
+
+/* STYLES FOR CONTEST PROMOTE BLOCK */
+
+.feed_contest_div {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #CACACA;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #E4E4E4;
+}
+.feed_contest_img {
+    border: 1px solid #CACACA;
+    border-radius: 4px;
+    width: 270px;
+    height: 180px;
+}
+.contest_descr_text {
+    color: #2F343D;
+    display: block;
+    line-height: 20px;
+    margin: 5px 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.contest_vote_text {
+    color: #F58723;
+    font-weight: bold;
+}

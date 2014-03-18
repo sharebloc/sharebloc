@@ -1,0 +1,57 @@
+##################################################################
+################### BETA #########################################
+##################################################################
+
+MAILTO="bear@deepshiftlabs.com"
+# weekly email
+0 10 * * 4 apache cd /var/www/sharebloc_beta/html/ && php /var/www/sharebloc_beta/html/send_emails.php type=weekly users=951 send_emails=1
+
+# SM feed weekly
+0 10 * * 4 apache cd /var/www/sharebloc_beta/html/ && php /var/www/sharebloc_beta/html/send_emails.php type=bloc_feed_email bloc_id=1 users=951 send_emails=1
+
+# Technology feed weekly
+0 10 * * 4 apache cd /var/www/sharebloc_beta/html/ && php /var/www/sharebloc_beta/html/send_emails.php type=bloc_feed_email bloc_id=5 users=951 send_emails=1
+
+# Real Estate feed weekly
+0 10 * * 4 apache cd /var/www/sharebloc_beta/html/ && php /var/www/sharebloc_beta/html/send_emails.php type=bloc_feed_email bloc_id=6 users=951 send_emails=1
+
+# Friends joined and followed daily
+0 8 * * * apache cd /var/www/sharebloc_beta/html/ && php /var/www/sharebloc_beta/html/send_emails.php type=friends_join_daily users=951 send_emails=1
+
+# RSS crawler
+0 11 * * * apache cd /var/www/sharebloc_beta/html/ && php /var/www/sharebloc_beta/html/autopost_from_rss.php
+
+##################################################################
+################### LIVE #########################################
+##################################################################
+MAILTO="bear@deepshiftlabs.com"
+
+# weekly email
+0 16 * * 4 apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=weekly users=2,951,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012 send_emails=1
+0 17 * * 4 apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=weekly normal_work=1 send_emails=1
+
+# weekly suggestion email
+0 16 * * 6 apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=suggestion_weekly users=2,951,3002 send_emails=1
+0 17 * * 6 apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=suggestion_weekly normal_work=1 send_emails=1
+
+# SM feed weekly
+0 16 * * 4 apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=bloc_feed_email bloc_id=1 users=2,951 send_emails=1
+20 17 * * 4 apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=bloc_feed_email bloc_id=1 normal_work=1 send_emails=1
+
+# Technology feed weekly
+0 16 * * 4 apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=bloc_feed_email bloc_id=5 users=2,951 send_emails=1
+22 17 * * 4 apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=bloc_feed_email bloc_id=5 normal_work=1 send_emails=1
+
+# Real Estate feed weekly
+0 16 * * 4 apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=bloc_feed_email bloc_id=6 users=2,951 send_emails=1
+24 17 * * 4 apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=bloc_feed_email bloc_id=6 normal_work=1 send_emails=1
+
+# Friends joined and followed daily
+0 12 * * * apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=friends_join_daily normal_work=1 send_emails=1
+
+# RSS crawler
+# 0 17 * * * apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/autopost_from_rss.php
+0 */4 * * * apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/autopost_from_rss.php publish_posts=1
+
+# Publishers info
+0 10 * * * apache cd /var/www/sharebloc/html/ && php /var/www/sharebloc/html/send_emails.php type=publishers_info normal_work=1 send_emails=1

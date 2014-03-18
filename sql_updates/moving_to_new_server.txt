@@ -1,0 +1,146 @@
+tar -czvf  /home/bear/logos.tar.gz /var/www/sharebloc/html/logos
+tar -czvf  /home/bear/screenshots.tar.gz /var/www/sharebloc/screenshots/
+
+73.147
+
+скопировать на новый сервер в /home/bear
+
+cd /var/www/sharebloc
+sudo tar -xzvf  /home/bear/screenshots.tar.gz
+sudo mv /var/www/sharebloc/var/www/sharebloc/screenshots /var/www/sharebloc/html/screenshots
+sudo rm -rf /var/www/sharebloc/var
+
+
+cd /var/www/sharebloc
+sudo tar -xzvf  /home/bear/logos.tar.gz
+sudo mv /var/www/sharebloc/var/www/sharebloc/html/logos /var/www/sharebloc/html/logos
+sudo rm -rf /var/www/sharebloc/var
+
+
+___________
+
+
+копирование базы
+сервер * 146
+
+
+mysqldump -u root -p vendorstack > bear.sql
+
+-- mysqldump -u root -p --result-file=/home/bear/bear.sql vendorstack
+tar -czvf  /home/bear/mysql_live.tar.gz /home/bear/bear.sql
+
+скопировать
+
+cd /home/bear
+sudo tar -xzvf  /home/bear/mysql_live.tar.gz
+mysql -u root -p sharebloc < /home/bear/home/bear/bear.sql
+sudo rm -rf /home/bear/home
+
+
+
+mysql -u root mysql
+create database sharebloc;
+
+
+---------
+конфиг
+cp /var/www/sharebloc/includes/class.Settings.php /home/bear/
+cp /var/www/sharebloc/includes/log4php.xml /home/bear/
+
+скопировать
+
+sudo cp /home/bear/class.Settings.php /var/www/sharebloc/includes/
+sudo cp /home/bear/log4php.xml /var/www/sharebloc/includes/
+
+
+--
+права
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc/includes/libs/templates_c(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc/html/logos(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc/html/screenshots(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc/log(/.*)?'
+
+sudo chown -R www:www /var/www/sharebloc
+sudo chmod -R 775  /var/www/sharebloc/includes/libs/templates_c
+sudo chmod -R 775  /var/www/sharebloc/html/logos
+sudo chmod -R 775  /var/www/sharebloc/html/screenshots
+sudo chmod -R 775  /var/www/sharebloc/log
+
+sudo restorecon -FR /var/www/sharebloc
+
+--------------------------------------------------------------
+**************************************************************
+--------------------------------------------------------------
+то же для beta
+
+tar -czvf  /home/bear/logos.tar.gz /var/www/sharebloc_beta/html/logos
+tar -czvf  /home/bear/screenshots.tar.gz /var/www/sharebloc_beta/screenshots/
+
+198.23.74.234
+
+скопировать на новый сервер в /home/bear
+
+cd /var/www/sharebloc_beta
+sudo tar -xzvf  /home/bear/screenshots.tar.gz
+sudo mv /var/www/sharebloc_beta/var/www/sharebloc_beta/screenshots /var/www/sharebloc_beta/html/screenshots
+sudo rm -rf /var/www/sharebloc_beta/var
+
+
+cd /var/www/sharebloc_beta
+sudo tar -xzvf  /home/bear/logos.tar.gz
+sudo mv /var/www/sharebloc_beta/var/www/sharebloc_beta/html/logos /var/www/sharebloc_beta/html/logos
+sudo rm -rf /var/www/sharebloc_beta/var
+
+
+___________
+
+
+копирование базы
+сервер * 146
+
+
+mysqldump -u root -p vendorstack_beta > bear_beta.sql
+
+скопировать
+
+cd /home/bear
+mysql -u root -p sharebloc_beta < /home/bear/bear_beta.sql
+
+
+
+mysql -u root mysql
+create database sharebloc_beta;
+
+
+grant all on sharebloc_beta.* to 'sharebloc_beta'@'localhost' identified by  '';
+grant all on sharebloc_beta.* to 'sharebloc_beta'@'akoller' identified by  '';
+
+grant all on sharebloc_beta.* to 'akoller'@'127.0.0.1' identified by  '';
+grant all on sharebloc.* to 'akoller'@'127.0.0.1' identified by  '';
+
+
+---------
+конфиг
+cp /var/www/sharebloc_beta/includes/class.Settings.php /home/bear/
+cp /var/www/sharebloc_beta/includes/log4php.xml /home/bear/
+
+скопировать
+
+sudo cp /home/bear/class.Settings.php /var/www/sharebloc_beta/includes/
+sudo cp /home/bear/log4php.xml /var/www/sharebloc_beta/includes/
+
+
+--
+права
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc_beta/includes/libs/templates_c(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc_beta/html/logos(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc_beta/html/screenshots(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc_beta/log(/.*)?'
+
+sudo chown -R www:www /var/www/sharebloc_beta
+sudo chmod -R 775  /var/www/sharebloc_beta/includes/libs/templates_c
+sudo chmod -R 775  /var/www/sharebloc_beta/html/logos
+sudo chmod -R 775  /var/www/sharebloc_beta/html/screenshots
+sudo chmod -R 775  /var/www/sharebloc_beta/log
+
+sudo restorecon -FR /var/www/sharebloc_beta

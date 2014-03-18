@@ -1,0 +1,66 @@
+---  1 -------
+
+-- also viewed task - https://vendorstack.atlassian.net/browse/VEN-33
+CREATE TABLE `also_viewed` (
+  `id` int(11) NOT NULL auto_increment,
+  `entity_type` enum('vendor','company','question') NOT NULL,
+  `entitya_id` int(11) NOT NULL,
+  `entityb_id` int(11) NOT NULL,
+  `counter` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `also_viewed_unique` (`entitya_id`,`entityb_id`,`entity_type`)
+) ENGINE=InnoDB AUTO_INCREMENT=153 DEFAULT CHARSET=latin1;
+
+
+---  2 -------
+
+-- Change URL so it represents the search category task - https://vendorstack.atlassian.net/browse/VEN-56
+-- WARN: see Technical details for update, point 2. We should do it after query below.
+ALTER TABLE tag ADD COLUMN `code_name` varchar(64) NOT NULL DEFAULT '';
+
+
+---  3 -------
+
+-- Track "Google Analytics"-like metrics for ShareBloc
+CREATE TABLE `track` (
+  `id` int(11) NOT NULL auto_increment,
+  `url` text,
+  `referrer` text,
+  `target` enum('in','out','local','direct') default NULL,
+  `script_name` varchar(40) default NULL,
+  `details` text,
+  `query` text,
+  `session_id` varchar(40) default NULL,
+  `visitor_id` varchar(32) default NULL,
+  `user_id` int(11) default NULL,
+  `ip` varchar(15) default NULL,
+  `agent` varchar(100) default NULL,
+  `f_first` tinyint(4) default NULL,
+  `f_from_search` tinyint(4) default NULL,
+  `ts` timestamp NULL default CURRENT_TIMESTAMP,
+  `year` int(11) default NULL,
+  `month` int(11) default NULL,
+  `day` int(11) default NULL,
+  `hour` tinyint(2) default NULL,
+  `minute` tinyint(2) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=40771 DEFAULT CHARSET=utf8;
+
+
+-- IF there is non-empty [outbound_track] table, queries below should be executed too:
+-- (task https://vendorstack.atlassian.net/browse/VEN-55)
+
+-- moving outbound_track_data to new table
+INSERT INTO track (url, user_id, referrer,
+					ts, target, f_from_search,
+                    f_first, year, month,
+                    day, hour, minute)
+SELECT destination, user_id, location,
+		date_tracked, 'out', 0,
+        0, YEAR(date_tracked), MONTH(date_tracked),
+        DAY(date_tracked), HOUR(date_tracked), MINUTE(date_tracked) FROM outbound_track;
+
+-- this table is obsolete
+DROP TABLE outbound_track;
+
+-- END OF "IF there is non-empty [outbound_track] table, queries below should be executed too:"

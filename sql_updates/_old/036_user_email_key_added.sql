@@ -1,0 +1,3 @@
+ALTER TABLE user ADD COLUMN email_key CHAR(32) NOT NULL DEFAULT '';
+
+UPDATE user SET email_key=MD5(RAND());

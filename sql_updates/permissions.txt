@@ -1,0 +1,53 @@
+-----TAGTAG and TESTTAGTAG-----
+
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/test-tagtagrevenge/log(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/test-tagtagrevenge/html/logos(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/tagtagrevenge/log(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/tagtagrevenge/html/logos(/.*)?'
+
+sudo chmod -R 775  /var/www/test-tagtagrevenge/html/logos
+sudo chmod -R 775  /var/www/tagtagrevenge/html/logos
+sudo chmod -R 775  /var/www/test-tagtagrevenge/log
+sudo chmod -R 775  /var/www/tagtagrevenge/log
+
+sudo restorecon -FR /var/www
+
+
+--------------- SHAREBLOC BETA -----------------
+# sudo vi /etc/httpd/conf.d/sharebloc_beta.conf
+
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc_beta/includes/libs/templates_c(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc_beta/html/logos(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc_beta/html/screenshots(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc_beta/log(/.*)?'
+
+sudo chown -R www:www /var/www/sharebloc_beta
+sudo chmod -R 775  /var/www/sharebloc_beta/includes/libs/templates_c
+sudo chmod -R 775  /var/www/sharebloc_beta/html/logos
+sudo chmod -R 775  /var/www/sharebloc_beta/html/screenshots
+sudo chmod -R 775  /var/www/sharebloc_beta/log
+
+sudo restorecon -FR /var/www/sharebloc_beta
+
+sudo vi /var/www/sharebloc_beta/includes/log4php.xml
+
+---------     SHAREBLOC  -----------------------
+  sudo svn checkout http://dev.vendorstack.com/svn/vendorstack/branches/Release_1_13_23_Aug_2013 /var/www/sharebloc
+
+ sudo vi /etc/httpd/conf.d/sharebloc.conf
+ sudo service httpd graceful
+
+ sudo vi /var/www/sharebloc/includes/log4php.xml
+
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc/includes/libs/templates_c(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc/html/logos(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc/html/screenshots(/.*)?'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/sharebloc/log(/.*)?'
+
+sudo chown -R www:www /var/www/sharebloc
+sudo chmod -R 775  /var/www/sharebloc/includes/libs/templates_c
+sudo chmod -R 775  /var/www/sharebloc/html/logos
+sudo chmod -R 775  /var/www/sharebloc/html/screenshots
+sudo chmod -R 775  /var/www/sharebloc/log
+
+sudo restorecon -FR /var/www/sharebloc

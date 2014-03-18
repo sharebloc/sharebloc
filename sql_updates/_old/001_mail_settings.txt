@@ -1,0 +1,23 @@
+ALTER TABLE `user` ADD COLUMN `date_confirmed` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `status`;
+
+CREATE TABLE `user_email_settings` (
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `setting_code` varchar(64) NOT NULL DEFAULT '',
+  `setting_value` tinyint(3) NOT NULL DEFAULT '0',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`user_id`,`setting_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `email_settings` (
+  `setting_id` int(11) NOT NULL AUTO_INCREMENT,
+  `setting_code` varchar(64) NOT NULL DEFAULT '',
+  `setting_name` varchar(64) NOT NULL DEFAULT '',
+  `setting_text` varchar(64) NOT NULL DEFAULT '',
+  PRIMARY KEY (`setting_id`),
+  UNIQUE KEY (`setting_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO email_settings ( setting_id, setting_code, setting_name, setting_text ) VALUES ( '1', 'newsletter', 'Newsletter', 'Periodically let me know what\'s new on VendorStack.');
+INSERT INTO email_settings ( setting_id, setting_code, setting_name, setting_text ) VALUES ( '2', 'review_notification', 'Vendor Notification', 'Let me know when a review is added for a vendor that I use.');
+INSERT INTO email_settings ( setting_id, setting_code, setting_name, setting_text ) VALUES ( '99', 'suppression_list', 'Opt-Out', 'I do not want VendorStack to e-mail me anymore.');

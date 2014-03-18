@@ -1,0 +1,797 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "BebasNeue";
+    src: local("BebasNeue"), url("/css/BebasNeue.otf") format("truetype");
+}
+@font-face {
+    font-family: "Nevis";
+    src: local("Nevis"), url("/css/nevis.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Frutiger";
+    src: local("Frutiger"), url("/css/frutiger.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lavanderia_regular";
+    src: local("Lavanderia_regular"), url("/css/Lavanderia_Regular.otf") format("truetype");
+}
+
+img {
+    border:none;
+}
+
+* {
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:         border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear{
+    clear: both;
+}
+.hide{
+    display: none;
+}
+
+body {
+    background: #F5F1E7;
+    font-family: "HelveticaNeue", "Tahoma", "Arial", sans-serif;
+    font-size: 62.5%;
+    margin: 0 auto;
+    padding-top: 6em;
+    color: #4B5752;
+}
+
+/* download link block at top and header */
+.download_block {
+    left: 0px;
+    position: fixed;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.download_link_div {
+    border-bottom: solid 3px #B34625;
+    display: inline-block;
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+}
+
+.download_block_content {
+    max-width: 96em;
+    display: inline-block;
+    width: 90%;
+}
+
+.download_link {
+    color: #ffffff;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.download_link_div.fixed {
+    background-color: #f58723;
+}
+.download_link_div.scroll {
+    background-color: #F9f5Eb;
+    background: -moz-linear-gradient(bottom, #e3DeD6 0%, #F9f5Eb);
+    background: -ms-linear-gradient(bottom, #e3DeD6 0%, #F9f5Eb);
+    background: -webkit-linear-gradient(bottom, #e3DeD6 0%, #F9f5Eb);
+}
+
+.download_link.fixed {
+    color: #ffffff;
+    text-shadow: 0px -1px #2f343d;
+}
+.download_link.scroll {
+    color: #2f343d;
+    text-shadow: 0px -1px #ffffff;
+}
+
+.vslogo_header {
+    display: inline-block;
+    float: left;
+    margin-top: 0px;
+    width: 14em;
+}
+.header_content {
+    float: right;
+    margin-top: 3px;
+    position: relative;
+}
+
+.header_person {
+    margin-top: -3px;
+}
+
+.header_person_hover {
+}
+#user_menu {
+    background-color: white;
+    border: 1px solid #cacaca;
+    padding: 0.5em 0.5em 0.5em 1em;
+    position: absolute;
+    right: 0px;
+    text-align: left;
+    width: 13em;
+    z-index: 1000;
+}
+
+.icon_header {
+    height: 2em;
+    margin-right: 0.5em;
+    vertical-align: sub;
+    width: 2em;
+}
+.header_link {
+    color: #005598;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-decoration: none;
+}
+.header_link:hover {
+    color: #00aeef;
+}
+
+a.header_submenu {
+    color: #005598;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: right;
+    text-decoration: none;
+}
+.hidden {
+    display: none;
+}
+.header_login {
+    float: right;
+}
+
+.header_signup {
+    float: right;
+    margin-right: 3em;
+}
+
+/* Styles for text container */
+.color_block_container {
+    text-align: center;
+    width: 100%;
+}
+
+.color_block_content {
+    display: inline-block;
+    max-width: 126em;
+    text-align: center;
+    width: 98%;
+    z-index: 100;
+}
+
+/* Styles for columns */
+.left_block, .center_block, .right_block {
+    float: left;
+}
+.left_block, .right_block {
+    /*width: 37em;*/
+    /*width: 31.1%;*/
+    width: 29.3%;
+}
+.center_block {
+    /*width: 43em;*/
+    /*width: 35%;*/
+    width: 38.6%;
+    margin-left: 1.35%;
+    margin-right: 1.35%;
+    background: #E5E0D6;
+}
+
+.center_block .text_link {
+    font-family: "Frutiger", "Tahoma";
+    color: #178F85;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.speck_tip .text_link {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: underline;
+}
+
+/* Styles for blocks */
+.scroll_link {
+    cursor: pointer;
+}
+.speck {
+    margin-bottom: 1.5em;
+    float: left;
+    width: 100%;
+    /*height: 30em;*/
+    padding: 2em 3em 0em 3em;
+    position: relative;
+}
+
+.center_title_block {
+    margin-bottom: 1em;
+    width: 100%;
+    height:22em;
+    position: relative;
+    background: transparent;
+}
+
+.center_text_block{
+    background: #F8F1E6;
+    float: left;
+    margin:0 1.5em 1.5em 1.5em;
+    padding: 2em 2em 1em 2em;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+}
+
+.payroll_block{
+    background: #89C6BE;
+}
+.health_block{
+    background: #DEAD9A;
+}
+.perf_block{
+    background: #A39ACA;
+}
+.hr_block{
+    background: #B5D09B;
+    /*background: #D8B7A0;*/
+}
+.hiring_block{
+    background: #E5CF9B;
+}
+.vslogo_block {
+    background: #ACC5D6;
+    height:17em;
+}
+
+/* Inside block styles */
+.speck_text {
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: left;
+    z-index: 20;
+    text-align: left;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    line-height: 1.3em;
+}
+.center_block .speck_text {
+    line-height: 1.2em;
+}
+.speck_title {
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: -2px;
+    color: #393430;
+}
+
+.protip {
+    color: #C64D2C;
+    font-weight: bold;
+}
+
+.tip_author {
+    font-style: italic;
+}
+.consider {
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+.vendors_block ol {
+    margin-left: 1.8em;
+    line-height: 1.5em;
+    font-weight: bold;
+    width: 100%;
+}
+.center_block .vendor_link {
+    color: #178F85;
+    font-weight: bold;
+}
+.vendors_block {
+    float: left;
+    text-align: left;
+    width: 100%;
+}
+
+.vendors_block .text_link {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.speck_image{
+    width: 100%;
+}
+.image_block, .image_title_block, .image_vslogo_block {
+    position: absolute;
+    z-index: 1;
+}
+.half_ol_left {
+    width: 50%;
+    float: left;
+}
+.half_ol_right {
+    width: 50%;
+    float: right;
+}
+
+/* center block */
+.center_speck_subheader {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: left;
+    color: #393430;
+    float:left;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+/* Corrections for blocks images */
+
+/*payroll*/
+.image_block.image_payroll {
+    right: 2%;
+    bottom: 4%;
+    width: 45%;
+}
+/*health*/
+.image_block.image_health {
+    right: -1.5em;
+    right: -4%;
+    bottom: -1%;
+    width: 53%;
+}
+.health_left_block {
+    width: 65%;
+}
+/* perf */
+.image_block.image_perf {
+    left: 3%;
+    bottom: -0.5%;
+    width: 40%;
+}
+.perf_tip_block, .perf_vendors_block {
+    float: right;
+    width: 55%;
+}
+/*hr*/
+.image_block.image_hr {
+    left: 2%;
+    bottom: -0.5%;
+    width: 40%;
+}
+.hr_tip_block {
+    float: right;
+    width: 75%;
+    text-align: left;
+}
+.hr_right_block {
+    float:right;
+    width: 60%;
+}
+/*hiring*/
+.image_block.image_hiring {
+    right: -4%;
+    bottom: -0.5%;
+    width: 37%;
+}
+.hiring_tip2_block {
+    float:left;
+    width: 80%;
+}
+.hiring_vendors {
+    float:left;
+    width: 95%;
+}
+
+/* vs logo */
+.vslogo_block {
+    padding: 0;
+}
+.image_vslogo_block {
+    left: 10%;
+    top: 36%;
+    width: 80%;
+}
+
+/* Title */
+.image_title_block {
+    left: -3%;
+    top: 10%;
+    /*width: 105.5%;*/
+    width: 104.8%;
+}
+
+.title_line {
+    /*-moz-transform: rotate(15deg);  Для Firefox */
+    -ms-transform: rotate(15deg); /* Для IE */
+    /*-webkit-transform: rotate(15deg);  Для Safari, Chrome, iOS */
+    transform: rotate(-15deg);
+    z-index: 100;
+    position: absolute;
+    font-family: "BebasNeue", "Tahoma";
+}
+
+.line1, .line2 {
+    font-size: 3.5em;
+    color: #F1E6D1;
+}
+.line1 {
+    top: 23.2%;
+    left: 1%;
+}
+.line2 {
+    top: 34.6%;
+    left: 24%;
+}
+.line3 {
+    font-family: "Tahoma";
+    font-size: 4.7em;
+    font-weight: bold;
+    color: black;
+    top:48%;
+    left: 10%;
+}
+.line4 {
+    font-size: 1.7em;
+    color: #F1E6D1;
+    top: 64%;
+    left: 68%;
+}
+
+/* Styles for text */
+.block_container {
+    text-align: center;
+    width: 100%;
+}
+.block_content {
+    display: inline-block;
+    max-width: 86em;
+    text-align: left;
+    font-family: "Frutiger", "Tahoma";
+    width: 90%;
+    z-index: 100;
+}
+
+.text_usual {
+    color: #696A6C;
+    font-size: 1.7em;
+    font-weight: lighter;
+    line-height: 1.3em;
+    margin-bottom: 1.5em;
+}
+
+.addendum_intro{
+    margin-top: 5em;
+}
+.addendum_word{
+    font-size: 2.1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: black;
+}
+
+.addendum_text{
+    padding-left: 3em;
+}
+
+.strategy_name{
+    font-size: 1.9em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: black;
+}
+
+.text_list {
+    margin-left: 6em;
+}
+.text_list li{
+    color: #696A6C;
+    font-size: 1.8em;
+    line-height: 1.3em;
+    margin-bottom: 1em;
+}
+
+.protip_text{
+    color: #C64D2C;
+}
+
+.protip_text .text_link {
+    font-weight: bold;
+    color: inherit;
+}
+
+.proscons{
+    font-family: "Nevis", "Tahoma";
+    font-weight: bold;
+    color: black;
+}
+.question_bold{
+    font-weight: bold;
+    color: black;
+}
+
+.function_title{
+    font-size: 2.3em;
+    font-weight: bold;
+    color: #1D9187;
+    margin-bottom: 0.5em;
+    margin-top: 1.7em;
+}
+
+.proscons_text .text_link, .consider_text .text_link, .addendum_intro .text_link, .green_link{
+    font-family: "Frutiger", "Tahoma";
+    color: #178F85;
+    font-weight: bold;
+}
+
+.function_title a {
+    color: #178F85;
+}
+
+.text_hr_container {
+    text-align: center;
+}
+.text_hr_div{
+    display: inline-block;
+    margin: 5em;
+    width: 40%;
+}
+.text_hr{
+    border-style: solid;
+    border-width: 1px;
+}
+
+.mentioned_title{
+    font-weight: bold;
+    color: black;
+    font-size: 2.4em;
+    margin-bottom: 0.1em;
+}
+
+.text_table {
+    width: 100%;
+}
+.text_table td {
+    text-align: left;
+    vertical-align: top;
+    width: 30%;
+    font-size: 1.8em;
+}
+
+.text_table .text_link {
+    font-family: "Frutiger", "Tahoma";
+    color: #178F85;
+}
+.table_subheader {
+    color: black;
+    font-weight: bold;
+}
+
+.text_thanks {
+    margin: 3em 0;
+}
+
+.disclaimer_title{
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #C54C2A;
+    margin-bottom: 1em;
+}
+
+.mailto_link {
+    font-weight: bold;
+    color: black;
+}
+
+/* Footer */
+.footer_block {
+    border-top: 1em solid #E4E4E4;
+    background: #2F343D;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+.footer_block_content {
+    display: inline-block;
+    /*max-width: 100em;*/
+    padding: 4.2em 0;
+    text-align: left;
+    width:100%;
+}
+
+.footer_link {
+    color: #00AEEF;
+    font-size: 1.2em;
+    margin-left: 1.2em;
+    line-height: 3em;
+    text-decoration: none;
+}
+
+
+/* Styles for text responsiveness */
+@media (max-width: 74em) {
+    .image_block.image_payroll {
+        width: 35%;
+    }
+    .image_block.image_health {
+        width: 50%;
+    }
+    .image_block.image_perf {
+        width: 30%;
+        left: 8%;
+    }
+    .image_block.image_hr {
+        width: 30%;
+    }
+    .hr_right_block {
+        width: 65%;
+    }
+    .image_block.image_hiring {
+        width: 30%;
+    }
+    .hiring_vendors{
+        width: 100%;
+    }
+}
+@media (max-width: 72em) {
+    .center_title_block {
+        height: 20em;
+    }
+    .half_ol_left, .half_ol_right {
+        width: 100%;
+    }
+    .perf_vendors_block {
+        width: 60%;
+    }
+    .perf_tip_block {
+        width: 79%;
+    }
+    .hr_tip_block {
+        width: 90%;
+    }
+}
+@media (max-width: 63em) {
+    .center_title_block {
+        height: 17em;
+    }
+    .image_block {
+        display: none;
+    }
+    .health_left_block, .perf_tip_block, .perf_vendors_block, .hr_tip_block, .hr_right_block, .hiring_tip2_block, .hiring_vendors {
+        width: 100%;
+    }
+    .image_vslogo_block {
+        top: 40%;
+    }
+}
+@media (max-width: 53em) {
+    .download_link_div {
+        font-size: 0.9em;
+    }
+    .center_title_block {
+        height: 15em;
+    }
+}
+@media (max-width: 43em) {
+    .center_title_block {
+        height: 12em;
+    }
+    .speck_title {
+        font-size: 1.5em;
+    }
+    .image_vslogo_block {
+        top: 45%;
+    }
+    .footer_block_content {
+        width: 98%;
+    }
+    .footer_link {
+        margin-left: 0.2em;
+    }
+}
+@media (max-width: 37em) {
+    .center_title_block {
+        height: 10em;
+    }
+    .speck_title {
+        font-size: 1.4em;
+    }
+    .block_content {
+        font-size: 0.9em;
+    }
+}
+@media (max-width: 33em) {
+    .center_title_block {
+        height: 25em;
+    }
+    .speck_title {
+        font-size: 1.4em;
+    }
+    .left_block, .right_block, .center_block {
+        width: 100%;
+        margin:0;
+    }
+
+    .color_block_virt_table {
+        width: 100%;
+        display: table;
+    }
+
+    .center_block {
+        display: table-header-group;
+        float: none;
+    }
+    .left_block {
+        display: table-row-group;
+        float: none;
+    }
+    .right_block {
+        display: table-footer-group;
+        float: none;
+    }
+
+    .color_block_content {
+        width: 90%;
+    }
+    table {
+        font-size: 0.7em;
+    }
+    .vslogo_block {
+        display: none;
+    }
+    .vslogo_header, .header_content {
+        display: none;
+    }
+}
+
+@media (max-width: 30em) {
+    .center_title_block {
+        height: 20em;
+    }
+    .block_content {
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 24em) {
+    .download_link_div {
+        font-size: 0.7em;
+    }
+    .center_title_block {
+        height: 15em;
+    }
+}
+@media (max-width: 18em) {
+    .center_title_block {
+        height: 12em;
+    }
+    .block_content {
+        font-size: 0.7em;
+    }
+    table {
+        font-size: 0.6em;
+    }
+}
+@media (max-width: 14em) {
+    .center_title_block {
+        height: 8em;
+    }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE user ADD COLUMN `f_elite` tinyint(4) NOT NULL DEFAULT 0;

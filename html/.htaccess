@@ -1,0 +1,55 @@
+RewriteEngine on
+#RewriteOptions MaxRedirects=1
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^sharebloc\.com [NC]
+RewriteRule ^(.*)$ http://www.sharebloc.com/$1 [L,R=301]
+
+RewriteRule ^contest([/].+)?$ content_marketing_nation$1 [L,R=301]
+
+RewriteRule ^team/?$ /team.php [L,QSA]
+RewriteRule ^terms/?$ /terms.php [L,QSA]
+RewriteRule ^resources/?$ /resources.php [L,QSA]
+RewriteRule ^every_sale_is_a_space_race/?$ /splash_space.php [L,QSA]
+RewriteRule ^lead_farming_three_steps_to_grow_leads/?$ /lead_farming_three_steps_to_grow_leads.php [L,QSA]
+RewriteRule ^back_office_human_resources/?$ /back_office_human_resources.php [L,QSA]
+RewriteRule ^seven_questions_by_mobile_developers/?$ /seven_questions_by_mobile_developers.php [L,QSA]
+RewriteRule ^privacy/?$ /privacy.php [L,QSA]
+RewriteRule ^join/?$ /join.php [L,QSA]
+RewriteRule ^signin/?$ /signin.php [L,QSA]
+#RewriteCond %{REQUEST_FILENAME} !-s
+#RewriteRule ^logos/(.+)?$ /display_image.php?code=$1 [L,QSA]
+RewriteRule ^screenshots/(.+)?$ /display_screenshot.php?code=$1 [L,QSA]
+RewriteRule ^files/(.+)?$ /file_download.php?file=$1 [L,QSA]
+RewriteRule ^companies/([^/]+)[/]?([^/]+)?[/]?$ /vendor.php?code=$1&cmd=$2 [L,QSA]
+RewriteRule ^users/([^/]+)[/]?([^/]+)?[/]?$ /user.php?code=$1&cmd=$2 [L,QSA]
+RewriteRule ^pw_rst/(.+)?$ /new_password.php?reset_key=$1 [L,QSA]
+RewriteRule ^post/(.+)?$ /post.php?type=$1 [L,QSA]
+RewriteRule ^invite/(.+)?$ /process_invite.php?code=$1 [L,QSA]
+RewriteRule ^share/(posted_link|question)s/([^/]+)?[/]?$ /show_post.php?type=$1&code_name=$2&shared_post=1 [L,QSA]
+RewriteRule ^(posted_link|question|link)s/([^/]+)[/]?$ /show_post.php?type=$1&code_name=$2 [L,QSA]
+RewriteRule ^invite_experts(.+)?$ /?p=1 [L,QSA]
+RewriteRule ^join/(.+)$ /process_invite.php?code=sbbeta_$1 [L,QSA]
+RewriteRule ^blocs/$ /bloc.php [L,QSA]
+RewriteRule ^blocs/([^/]+)[/]?([^/]+)?[/]?$ /bloc.php?code=$1&cmd=$2 [L,QSA]
+RewriteRule ^unsubscribe/([^/]+)[/]([^/]+)$ /unsubscribe.php?type=$1&code=$2 [L,QSA]
+RewriteRule ^recent/$ /recent_connections.php [L,QSA]
+RewriteRule ^guidelines/$ /guidelines.php [L,QSA]
+RewriteRule ^sitemap.xml$ /sitemap.php [L]
+
+RewriteRule ^top_content_marketing_posts_of_2013$ /contest.php?contest_id=1 [L,QSA]
+RewriteRule ^top_content_marketing_posts_of_2013/(.+)$ /contest_all.php?contest_id=1&code=$1 [L]
+RewriteRule ^content_marketing_nation$ /contest.php?contest_id=2 [L,QSA]
+RewriteRule ^content_marketing_nation/(.+)$ /contest_all.php?contest_id=2&code=$1 [L]
+RewriteRule ^sharebloc_content_marketing_nation_contest_rules/?$ /contest_rules.php [L,QSA]
+
+RewriteRule ^confirm/votes/([^/]+)$ /contest.php?type=confirm_votes&code=$1 [L,QSA]
+RewriteRule ^confirm/email/([^/]+)$ /signin.php?type=confirm_email&code=$1 [L,QSA]
+RewriteRule ^confirm/subscribe/([^/]+)$ /confirm.php?type=subscribe&code=$1 [L,QSA]
+RewriteRule ^img/([^/]+)(.png)$ /track_emails.php?code=$1 [L,QSA]
+RewriteRule ^rss/(blocs|companies|users)/(.+)$ /rss.php?type=$1&code=$2 [L,QSA]
+RewriteRule ^calendar/(.+)$ /calendar.php?tag=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ 404.php [L]

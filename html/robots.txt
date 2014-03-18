@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /uploadify/
+Disallow: /js/
+Disallow: /images/
+Disallow: /css/
+Disallow: /file_download/

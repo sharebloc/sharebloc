@@ -1,0 +1,1 @@
+ALTER TABLE track modify COLUMN `target` enum('in','out','local','direct','share') default NULL;

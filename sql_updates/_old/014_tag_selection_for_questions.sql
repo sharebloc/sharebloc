@@ -1,0 +1,1 @@
+ALTER TABLE tag_selection modify COLUMN `entity_type` enum('vendor','company','user','posted_link','question') NOT NULL default 'vendor';

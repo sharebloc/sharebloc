@@ -1,0 +1,1 @@
+ALTER TABLE user ADD COLUMN `feed_tags` TEXT NULL AFTER status;

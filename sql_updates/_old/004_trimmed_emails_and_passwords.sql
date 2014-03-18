@@ -1,0 +1,1 @@
+UPDATE user SET email=TRIM(email), password=trim(password);
