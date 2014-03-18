@@ -1,2 +1,5 @@
 .svn
 log
+.vagrant
+includes/class.Settings.php
+includes/libs/templates_c/
