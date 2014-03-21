@@ -11,7 +11,7 @@ apt-get update
 
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password sharebloc'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password sharebloc'
-apt-get install -y nginx memcached mysql-server php5 php5-fpm php5-cli php5-mysql php5-memcache
+apt-get install -y nginx memcached mysql-server php5 php5-fpm php5-cli php5-curl php5-gd php5-mysql php5-memcache
 
 mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 ln -s /vagrant/vagrant/nginx.conf /etc/nginx/nginx.conf
