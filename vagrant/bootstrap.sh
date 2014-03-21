@@ -9,7 +9,9 @@ apt-key add dotdeb.gpg
 
 apt-get update
 
-apt-get install -y nginx memcached php5 php5-fpm php5-cli php5-mysql php5-memcache
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password sharebloc'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password sharebloc'
+apt-get install -y nginx memcached mysql-server php5 php5-fpm php5-cli php5-mysql php5-memcache
 
 mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 ln -s /vagrant/vagrant/nginx.conf /etc/nginx/nginx.conf
@@ -21,3 +23,6 @@ ln -s /vagrant/vagrant/php-fpm.conf /etc/php5/fpm/php-fpm.conf
 
 rm -f /vagrant/includes/class.Settings.php
 ln -s /vagrant/includes/class.Settings.php.dev /vagrant/includes/class.Settings.php
+
+echo "create database sharebloc;" | mysql -u root --password=sharebloc
+mysql -u root --password=sharebloc sharebloc < /vagrant/sharebloc.sql
