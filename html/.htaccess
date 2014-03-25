@@ -1,0 +1,10 @@
+RewriteEngine on
+#RewriteOptions MaxRedirects=1
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^sharebloc\.com [NC]
+RewriteRule ^(.*)$ http://www.sharebloc.com/$1 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ index.php [L]
