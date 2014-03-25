@@ -2,6 +2,8 @@
 
 // JT: Basic routing, replaces .htaccess. This is a dirty hack.
 
+date_default_timezone_set('UTC');
+
 function redirect301($uri) {
     header('HTTP/1.1 301 Moved Permanently');
     header($uri);
@@ -24,8 +26,8 @@ if (preg_match('%^/contest([/].+)?$%', $_SERVER['REQUEST_URI'], $matches)) {
     redirect301('/contest'.$matches[1]);
 }
 
-list($path, $query_string) = explode('?', $_SERVER['REQUEST_URI']);
-define('REQUEST_PATH', $path);
+$path = explode('?', $_SERVER['REQUEST_URI']);
+define('REQUEST_PATH', $path[0]);
 
 /* routing starts here */
 
