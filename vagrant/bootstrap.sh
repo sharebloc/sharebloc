@@ -22,7 +22,7 @@ ln -s /vagrant/vagrant/php-fpm.conf /etc/php5/fpm/php-fpm.conf
 /etc/init.d/php5-fpm restart
 
 rm -f /vagrant/includes/class.Settings.php
-ln -s /vagrant/includes/class.Settings.php.dev /vagrant/includes/class.Settings.php
+ln -s /vagrant/includes/class.Settings.php.vagrant /vagrant/includes/class.Settings.php
 
 echo "create database sharebloc;" | mysql -u root --password=sharebloc
 mysql -u root --password=sharebloc sharebloc < /vagrant/sharebloc.sql
