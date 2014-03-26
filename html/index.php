@@ -108,7 +108,7 @@ if (preg_match('%^/companies/([^/]+)[/]?([^/]+)?[/]?$%', REQUEST_PATH, $matches)
 if (preg_match('%^/users/([^/]+)[/]?([^/]+)?[/]?$%', REQUEST_PATH, $matches)) {
     $_GET['code'] = $matches[1];
     $_GET['cmd'] = $matches[2];
-    require('users.php');
+    require('user.php');
     exit;
 }
 
