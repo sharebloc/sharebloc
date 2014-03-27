@@ -5,7 +5,7 @@
         </div>
         <div id="submit_votes_form_div" class="standard_popup_content">
                 <div class="popup_text_div">
-                    Thank you for helping us choose the foobar. The contest is now officially over.
+                    Thank you for helping us choose the Top Marketing Automation Post. The contest is now officially over.
                 </div>
                 <div class="popup_text_div">
                     The voting doesn't stop though. You can view the best content for <a class="popup_link" href="http://www.sharebloc.com/blocs/sales__marketing" target="_blank">sales & marketing every day</a>. Like the contest, these posts are nominated by users like you and voted up and down by the community.
