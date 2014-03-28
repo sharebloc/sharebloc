@@ -63,9 +63,7 @@
     </div>
     <div class="right_rail">
         <div class="right_rail_content f_contest">
-            <div>
-                <a id="nominate_link" class="action_front_link" href="">Post a link</a>
-            </div>
+
             {include file='components/front/invite_link.tpl' type='contest'}
             <div class="front_custom_invite_div">
                 <div class="contest_sponsors_banner">
@@ -87,19 +85,13 @@
     </div>
     <div class="clear"></div>
 </div>
-{include file='contest_marketo/nomination_popup.tpl'}
-{include file='contest_marketo/contest_rules.tpl'}
-{if $show_join_welcome_popup}
-    {include file='components/welcome_popup.tpl'}
-{/if}
 {include file='components/js_common.tpl'}
 <script>
     var contest_id = {$contest_id};
     var block_bottom = 0;
     var block_fixed = false;
-    var should_scroll_to_contest = getSBCookie('should_scroll_to_contest');
+    var should_scroll_to_contest = 1;
     var scroll_to_post = {$scroll_to_post};
-    var contest_open_nomin_popup = {$contest_open_nomin_popup};
 
     $(document).ready(function() {
         setRightRailFixed(100);
@@ -110,6 +102,11 @@
         prepareSharing();
         prepareVoting();
         prepareContestVoting();
+
+        $(".contest_image_btn").click(function() {
+            scrollToContest();
+            return false;
+        });
 
         var sponsor_block = $('.sponsors_div');
         block_bottom = sponsor_block.offset().top + sponsor_block.height();
@@ -123,65 +120,11 @@
             scrollToContest();
         }
 
-        $("#nominate_link").click(function() {
-            if (!is_logged) {
-                window.location.href = login_url +'?contest_open_nomin_popup=1';
-            } else {
-                $("#popup_nominate_link_container").show();
-            }
-            return false;
-        });
-
-        if (contest_open_nomin_popup) {
-            $("#nominate_link").trigger('click');
-        }
-
-        $("#welcome_popup_close").click(function(){
-            $("#popup_welcome_container").hide();
-            return false;
-        });
-
-        $("#show_contest_rules_link").click(function() {
-            $("#popup_contest_rules_container").show();
-            return false;
-        });
-
-        $("#close_popup_rules").click(function() {
-            $("#popup_contest_rules_container").hide();
-            return false;
-        });
-
-        $(".contest_image_btn").click(function() {
-            scrollToContest();
-            return false;
-        });
-
         $("#nominate_link_buttons_div .cancel_btn").click(function() {
             $("#popup_nominate_link_container").hide();
             $("#nominate_link_form").trigger('reset');
             return false;
         });
-
-        $("#nominate_link_submit").click(function() {
-            if ($("#nominate_link_form").validationEngine('validate')) {
-                postContent();
-            }
-           $("#nominate_link_form").validationEngine({
-            });
-            return false;
-        });
-
-        $("#url_input").blur(function() {
-            getUrlData($(this).val());
-        });
-        $("#img_next").click(function() {
-            rotateImg(true);
-        });
-        $("#img_prev").click(function() {
-            rotateImg(false);
-        });
-        $("#title_input").addSymbolsCounter();
-        $("#text_input").addSymbolsCounter();
     });
 
     function scrollToPost() {
@@ -230,44 +173,6 @@
         }
 
     }
-
-    function postContent() {
-        var data = { };
-        data.post_type = 'contest';
-        data.title = $.trim($('#title_input').val());
-        data.text = $.trim($('#text_input').val());
-        data.f_anonym = 0;
-        data.tweet_after_post = 1;
-        data.contest_id = contest_id;
-        data.url = $.trim($('#url_input').val());
-        data.image = $('#post_image').attr('src');
-        data.no_thumb = $('#no_thumb_chk').is(':checked') ? 1 : 0;
-
-        var sponsor_email_chk = $('#get_sponsor_email_chk');
-        if (sponsor_email_chk.length) {
-            data.f_get_sponsor_email = sponsor_email_chk.is(':checked') ? 1 : 0;
-        }
-        sendPostContent(data);
-    }
-
-    function sendPostContent(data) {
-        data.cmd = 'postContent';
-        $.ajax({
-            data: data,
-            success: function(data) {
-                if (data.status === 'success') {
-                    var url = "{$join_redir_path}";
-                    if (is_logged) {
-                        url = data['result_url'];
-                    }
-                    $(location).attr('href', url);
-                } else {
-                    alert(data.message);
-                }
-            }
-        });
-    }
-
 </script>
 
 {include file='components/footer_new.tpl'}

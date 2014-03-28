@@ -210,13 +210,6 @@ if (preg_match('%^/content_marketing_nation$%', REQUEST_PATH, $matches)) {
     exit;
 }
 
-if (preg_match('%^/content_marketing_nation/(.+)$%', REQUEST_PATH, $matches)) {
-    $_GET['contest_id'] = 2;
-    $_GET['code'] = $matches[1];
-    require('contest_all.php');
-    exit;
-}
-
 if (preg_match('%^/sharebloc_content_marketing_nation_contest_rules/?$%', REQUEST_PATH, $matches)) {
     require('contest_rules.php');
     exit;
