@@ -30,11 +30,11 @@
         {assign var='text_to_share_twitter' value=$text_to_share}
         {assign var='text_to_share_email' value=$text_to_share}
     {else}
-        {assign var='input_title' value="Vote for a winner on ShareBloc's Content Marketing Nation Contest"}
+        {assign var='input_title' value="Congratulate the winners!"}
         {assign var='url_to_share' value='/'|cat:{$contest_url}}
-        {assign var='text_to_share' value="Come vote on the Content Marketing Nation Contest #cntmktgnation14 on @ShareBloc"}
+        {assign var='text_to_share' value="Congratulations to the Content Marketing Nation Contest winners! #cntmktgnation14 on @ShareBloc"}
         {assign var='text_to_share_twitter' value=$text_to_share}
-        {assign var='text_to_share_email' value="Friend,\nHelp me vote for a winner on the Content Marketing Nation Contest #cntmktgnation14 on @ShareBloc"}
+        {assign var='text_to_share_email' value="Check out the winners of ShareBloc's Content Marketing Nation Contest"}
     {/if}
 {elseif $type=='event'}
     {assign var='input_title' value="Share this page"}

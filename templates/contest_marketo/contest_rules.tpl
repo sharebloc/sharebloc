@@ -22,7 +22,7 @@
         </div>
         <div id="contest_rules_buttons_div" class="popup_function">
             <a id="close_popup_rules" class="save_changes" href="#">Got It!</a>
-            <div id="rules_popup_tweet_btn" class="share_post_btn" data-shareurl="{$base_url}/{$contest_url}" data-text="Come vote on the Content Marketing Nation Contest #cntmktgnation14 on @ShareBloc" data-provider="twitter">
+            <div id="rules_popup_tweet_btn" class="share_post_btn" data-shareurl="{$base_url}/{$contest_url}" data-text="Congratulations to the Content Marketing Nation Contest winners! #cntmktgnation14 on @ShareBloc" data-provider="twitter">
                 <img class="tweet_img" src="/images/twitter.png">
                 Share on Twitter
             </div>
