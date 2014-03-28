@@ -5,3 +5,6 @@ includes/class.Settings.php
 includes/libs/templates_c/
 sharebloc.sql
 sharebloc.sql.gz
+includes/log4php.xml
+html/logos
+html/screenshots
