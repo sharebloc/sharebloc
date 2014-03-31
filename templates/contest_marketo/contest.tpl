@@ -100,8 +100,12 @@
         prepareContentDelete();
         prepareCopyToClipboard();
         prepareSharing();
-        prepareVoting();
+        // prepareVoting();
         prepareContestVoting();
+
+        $(document).on("click touchstart", ".arrow_up, .arrow_down", function(e){
+                e.preventDefault();
+        });
 
         $(".contest_image_btn").click(function() {
             scrollToContest();

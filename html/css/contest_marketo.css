@@ -248,6 +248,10 @@
     padding: 5px;
 }
 
-.arrow_down {
-    display: none !important;
+.arrow_down,
+.arrow_up,
+.arrow_active,
+.arrow_active:hover {
+    cursor: default !important;
+    border-color: #005598 transparent;
 }
