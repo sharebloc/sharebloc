@@ -413,6 +413,21 @@ ORDER BY date_added DESC",
                                 self::$start_user_id,
                                 self::$users_limit_str);
                 break;
+            case 'marketo_contest_end':
+                 //same as contest launch
+                            $sql = sprintf("SELECT u.user_id
+                                FROM user u
+                                JOIN link l ON l.entity1_id=u.user_id AND l.entity1_type='user'
+                                        AND l.entity2_type='tag' AND l.entity2_id=1
+                                WHERE u.user_id>=%d
+                                AND notify_product_update=1
+                                ORDER BY user_id
+                                %s",
+                                self::$start_user_id,
+                                self::$users_limit_str);
+                break;
+
+
             default:
                 $msg = "Unknown mailing list type: " . self::$mailing_list_type . ", will exit.";
                 e($msg);
@@ -560,6 +575,10 @@ ORDER BY date_added DESC",
                 case 'contest_vote_reminder':
                     $result = self::prepareAndSendContestReminderEmail($user_id);
                     break;
+                case 'marketo_contest_end':
+                    $result = self::prepareAndSendContestEndingEmail($user_id);
+                    break;
+
             }
 
             if ($result) {
@@ -1086,5 +1105,14 @@ ORDER BY date_added DESC",
 
         return $send_result;
     }
+
+
+   private static function prepareAndSendContestEndingEmail($user_id) {
+        $mailer = new Mailer('marketo_contest_end');
+        $send_result = $mailer->sendContestEndingEmail($user_id, self::$mailing_list_type, !self::$really_send_emails);
+
+        return $send_result;
+    }
+
 }
 

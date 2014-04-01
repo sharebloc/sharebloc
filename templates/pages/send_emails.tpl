@@ -38,6 +38,12 @@
         <div class="clear"></div>
         <hr>
 
+        <br><br><b>CONTEST ending email for current user:</b><br><br>
+        <a target='_blank' href='{$url_prefix}marketo_contest_end{$curr_user_part}'>Current user (show only)</a><br><br>
+        <a target='_blank' href='{$url_prefix}marketo_contest_end{$curr_user_part}{$send_email_part}'>Current user (send email)</a><br><br>
+        <a target='_blank' href='{$url_prefix}marketo_contest_end{$norm_work_part}'>All users (show only)</a><br><br>
+        <hr>
+
         <br><br><b>Testing weekly email:</b><br><br>
         <a target='_blank' href='{$url_prefix}weekly{$curr_user_part}'>Current user (show only)</a><br><br>
         <a target='_blank' href='{$url_prefix}weekly{$curr_user_part}{$send_email_part}'>Current user (send email)</a><br><br>
@@ -49,6 +55,8 @@
         <a target='_blank' href='{$url_prefix}daily{$curr_user_part}{$send_email_part}'>Current user (send email)</a><br><br>
         <a target='_blank' href='{$url_prefix}daily{$norm_work_part}'>All users (show only)</a><br><br>
         <hr>
+
+      
 
         <br><br><b>Testing blocs emails for unregistered:</b><br><br>
         {foreach $subscription_blocs item=tag_id}
