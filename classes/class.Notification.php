@@ -1109,7 +1109,7 @@ ORDER BY date_added DESC",
 
    private static function prepareAndSendContestEndingEmail($user_id) {
         $mailer = new Mailer('marketo_contest_end');
-        $send_result = $mailer->sendContestEndingEmail($user_id, self::$mailing_list_type, !self::$really_send_emails);
+        $send_result = $mailer->sendContestEndingEmail($user_id, !self::$really_send_emails);
 
         return $send_result;
     }
