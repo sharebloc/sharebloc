@@ -1,6 +1,6 @@
 <div id="popup_invite_front_container" class="standard_popup_container hide">
     <div class="standard_popup">
-        <div class="title_wide_popup">Invite to private beta</div>
+        <div class="title_wide_popup">Invite to ShareBloc</div>
             <div id="invite_front_inputs" class="standard_popup_content hide">
                 <form id="front_invite_form">
                     <div class="popup_input_row">
@@ -18,7 +18,7 @@
                     <div class="popup_input_row">
                         <label id="front_input_email_label">Email text:</label>
                         <textarea id="front_input_text" name="text" class="validate[required,maxSize[500]] join_input">Hello,
-{if !empty($user_info.first_name)}{$user_info.first_name}{/if} {if !empty($user_info.last_name)}{$user_info.last_name}{/if} invites you try out the private beta for ShareBloc. ShareBloc helps you discover better business content with other professionals like you.</textarea>
+{if !empty($user_info.first_name)}{$user_info.first_name}{/if} {if !empty($user_info.last_name)}{$user_info.last_name}{/if} invites you try out ShareBloc. ShareBloc helps you discover better business content with other professionals like you.</textarea>
                     </div>
                 </form>
             </div>

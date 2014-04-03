@@ -4,7 +4,7 @@
     {include file='components/join_steps.tpl'}
     <div class="content_container join_step_container">
         <div class="join_container_block page_title"><span class="page_title_text">Invite Five of Your Contacts</span></div>
-        <div class="join_container_block page_title"><span class="join_subtitle">Invite five friends or more into this private beta to follow them! </span></div>
+        <div class="join_container_block page_title"><span class="join_subtitle">Invite five friends or more so you can follow them! </span></div>
         <div class="join_container_block fields_section">
             <form id="contacts_form" method="POST" action="{$join_redir_path}" autocomplete="off">
                 <div id="join_contacts_div" class="join_contacts_div">
