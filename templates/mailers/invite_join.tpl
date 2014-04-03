@@ -2,7 +2,7 @@
 <br />
 Hello{if $addressee_first_name} {$addressee_first_name}{/if},
 <br />
-{$sender_full_name} invites you try out the private beta for ShareBloc. ShareBloc helps you discover better business content with other professionals like you.
+{$sender_full_name} invites you try out ShareBloc. ShareBloc helps you discover better business content with other professionals like you.
 <br /><br />
 <a href="{$base_url}/invite/{$confirm_key}">Click here to check it out</a>
 <br /><br />
