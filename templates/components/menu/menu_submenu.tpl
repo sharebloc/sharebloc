@@ -20,3 +20,13 @@
         </div>
     </div>
 </div>
+<!-- AK Adding in bar for Paul Rosenberg -->
+{if $show_contest_widget}
+<div class="sub_header_announcement">
+    <div class="announcement_block">
+        <a href="http://my.leadmd.com/RoyalRevenueRumble.html" class="announcement_link">
+    Royal Revenue Rumble - Marketing vs. Sales Webinar on February 25 brought to you by LeadMD
+        </a>
+    </div>    
+</div>
+{/if}
