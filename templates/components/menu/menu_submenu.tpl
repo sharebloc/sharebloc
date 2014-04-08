@@ -20,3 +20,13 @@
         </div>
     </div>
 </div>
+<!-- AK Adding in bar for Paul Rosenberg -->
+{if $show_contest_widget}
+<div class="sub_header_announcement">
+    <div class="announcement_block">
+        <a href="http://knowledge.funnelholic.com/funnelholic_sales_summit_sharebloc/" class="announcement_link" target="_blank">
+    Top sales thinkers reveal their secrets to success in Funnelholic's Sales Summit Webinar on April 17
+        </a>
+    </div>    
+</div>
+{/if}

@@ -1659,6 +1659,26 @@ textarea.join_input {
     color: #FFFFFF;
 }
 
+/*Adding in the sub sub header info AK 2014-04-03*/
+.sub_header_announcement {
+    background: #F58723;
+    border-bottom: 1px solid #CACACA;
+    width: 100%;
+
+}
+.announcement_block {
+width: 1000px;
+text-align: center;
+height: 30px;
+line-height: 30px;
+margin: 0px auto;
+}
+
+.announcement_link {
+color: #ffffff;
+font-weight: bold;
+}
+
 .profile_header_container {
     background-color: #E4E4E4;
     border-top: 1px solid #CACACA;
