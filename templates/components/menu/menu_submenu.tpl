@@ -25,7 +25,7 @@
 <div class="sub_header_announcement">
     <div class="announcement_block">
         <a href="http://knowledge.funnelholic.com/funnelholic_sales_summit_sharebloc/" class="announcement_link" target="_blank">
-    Top sales thinkers reveal their secrets to success in Funnelholic's Sales Summit Webinar on April 17
+    Learn sales tactics that work in Funnelholic's Sales Summit on April 17 featuring Jill Konrath, Jill Rowley, Matt Heinz and Dan Waldschmidt
         </a>
     </div>    
 </div>
