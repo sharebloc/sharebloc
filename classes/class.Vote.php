@@ -54,7 +54,7 @@ class Vote {
             }
         }
     }
-
+//This also looks important
     function set_user_vote($value) {
         global $db;
 
@@ -98,21 +98,44 @@ class Vote {
     function get() {
         return $this->data;
     }
+    // This looks important -AK 
+//ORDER
+    //confirmvotes
+    //process_vote
+    //Applyvvoteifneeded
+    //getNewVoteValue
+
 
     private function getNewVoteValue($vote_value) {
         $current_user_val = $this->get_user_vote();
-
         $new_user_val = $current_user_val + $vote_value ;
-
+        
         if (is_admin()) {
             // admin can vote unlimited
+            $new_user_val = $current_user_val + $vote_value ;
             return $new_user_val;
         }
+        //this changes the vote value before it set all novte value to 1
+        //if there's no vote before vote value should be equal to the amount
+        //passed in
+        if ($current_user_val == 0){
+            $new_user_val=$vote_value;
+        
 
-        if ($new_user_val > 1) {
-            $new_user_val = 1;
-        } elseif ($new_user_val < -1) {
-            $new_user_val = -1;
+        }
+        //elseif the user votes up and there is already an up vote set the new
+        //value to the user's vote amount
+        elseif ($vote_value > 0 && $current_user_val > 0) {
+            $new_user_val = $vote_value;
+        } 
+        //if the vote is down and prevous vote was up vote should undo
+        //previous upvote
+        elseif ($vote_value < 0 && $current_user_val > 0) {
+            $new_user_val = 0;
+        }
+        // If there was a previous downvote, then followed by an upvote, set to 0
+        elseif($vote_value > 0 && $current_user_val < 0){
+            $new_user_val = 0;
         }
 
         return $new_user_val;
@@ -138,12 +161,20 @@ class Vote {
         return $qobj;
     }
 
+//This function contains logic to either count the full vote, 
+//take away the previous upvote or create a downvote
+
     function applyVoteIfNeeded($vote_value) {
+        //See the value of the user's current vote
         $current_user_val = $this->get_user_vote();
+
+        //The value of all votes total 
         $current_total = $this->get_vote_totals();
 
         $new_user_val = $this->getNewVoteValue($vote_value);
-
+        // if the user has voted once and after voting would be the same there's no need to update
+        // for example: if the current value is 1 and value after the vote would be 1 there's no need
+        // to process the vote
         if ($current_user_val === $new_user_val) {
             return false;
         }

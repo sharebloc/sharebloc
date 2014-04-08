@@ -607,6 +607,7 @@ function vote(arrow) {
             if (data.status === 'success') {
                 if (!data.vote_data.no_votes_left_error) {
                     updateVote(data.vote_data, id, type);
+
                 }
                 if (use_contest_vote) {
                     processContestVote(data.votes_left, data.vote_data.no_votes_left_error);
@@ -618,27 +619,43 @@ function vote(arrow) {
     });
 }
 
+
+
 function updateVote(data, id, type) {
+
     $("#" + type + "_vote_total_" + id).text(data.total);
+    
+    console.log([1,5]);
+    console.log(data);
+    console.log(is_admin);
+    console.log(is_elite);
+
 
     var vote_block = $("#vote_" + type + "_" + id);
     var arrow_up = vote_block.find(".arrow_up");
     var arrow_down = vote_block.find(".arrow_down");
 
+// Remove both inactive arrows
     arrow_up.removeClass('arrow_active arrow_inactive');
     arrow_down.removeClass('arrow_active arrow_inactive');
 
+// if user has in total voted down, down arrow is in active up is active
     if (data.user_vote < 0) {
         arrow_up.addClass("arrow_active");
         arrow_down.addClass("arrow_inactive");
-    } else if (data.user_vote > 0) {
+    } 
+//  if user has voted up in total, up is inactive and down is active
+    else if (data.user_vote > 0) {
         arrow_up.addClass("arrow_inactive");
         arrow_down.addClass("arrow_active");
-    } else {
+    } 
+// if user's vote total is neither up nor down, both arrows are active. Should turn off down for non-elites
+    else {
         arrow_up.addClass("arrow_active");
         arrow_down.addClass("arrow_active");
     }
 
+// never allow for a down vote
     if (data.total < 1) {
         arrow_down.hide();
     } else {

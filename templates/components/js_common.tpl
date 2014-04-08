@@ -33,6 +33,7 @@
     var is_admin = {if $is_admin}true{else}false{/if};
     var is_logged = {if $logged_in}true{else}false{/if};
     var is_voter = {if $contest_voter}true{else}false{/if};
+    var is_elite = {if $is_elite}true{else}false{/if};
     var dev_mode = {if $dev_mode}true{else}false{/if};
     var login_url = "{$login_redir_path}";
     var alert_message = "{$alert_message}";

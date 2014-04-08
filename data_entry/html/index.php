@@ -8,6 +8,7 @@ require_once ("../utils/init.php");
 
 $logged_in = Utils::isLoggedIn();
 $is_admin = Utils::isAdmin();
+$is_elite = Utils::isElite();
 $login_error = "";
 
 if (Utils::sVar("use_new_work_vendor")) {
@@ -20,6 +21,7 @@ if ($logged_in) {
         Utils::logOut();
         $logged_in = false;
         $is_admin = false;
+        $is_elite = false;
     }
 }
 
