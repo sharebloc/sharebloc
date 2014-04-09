@@ -12,7 +12,7 @@
     {if !empty(daily_header)}
     <tr>
         <td style="background-color: #2f343d; width: 200px; padding-left: 20px; padding-top: 2px; font-size: 13px; padding-bottom: 2px;" colspan="3">
-            <a style="color: #ffffff; text-decoration: none;" href="http://knowledge.funnelholic.com/funnelholic_sales_summit_sharebloc/" class="announcement_link">Learn sales tactics that work in Funnelholic's Sales Summit on April 17 featuring Jill Konrath, Jill Rowley, Matt Heinz and Dan Waldschmidt</a>
+            <a style="color: #ffffff; text-decoration: none;" href="http://knowledge.funnelholic.com/funnelholic_sales_summit_sharebloc/" class="announcement_link">Learn sales tactics that work in Funnelholic's Sales Summit on April 17</a>
         </td>
       
     </tr>
