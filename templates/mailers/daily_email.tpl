@@ -1,8 +1,8 @@
-{include file='components/mailer/feed_post_function.tpl' daily_header=1}
+{include file='components/mailer/feed_post_function.tpl'}
 
 {***  END OF FUNCTIONS ****}
 
-{include file='components/mailer/header.tpl' title="{$subject}"}
+{include file='components/mailer/header.tpl' title="{$subject}" daily_header=1}
 <br>
 {$addressee_first_name},<br>
 Here are today's top posts from your feed:
