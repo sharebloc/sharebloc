@@ -1,4 +1,4 @@
-{include file='components/mailer/feed_post_function.tpl'}
+{include file='components/mailer/feed_post_function.tpl' daily_header=1}
 
 {***  END OF FUNCTIONS ****}
 
