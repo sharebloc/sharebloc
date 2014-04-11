@@ -30,10 +30,11 @@
     </div>
     <div class="right_rail">
         <div class="right_rail_content">
-            {include file='components/front/front_right_post_buttons.tpl'}
+<!--             {include file='components/front/front_right_post_buttons.tpl'}
+            AK 2014-04-10 removed contest widget
             {if $show_contest_widget}
                 {include file='contest_marketo/contest_widget_block.tpl'}
-            {/if}
+            {/if} -->
             {include file='components/front/invite_link.tpl' type='user'}
         </div>
     </div>
