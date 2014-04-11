@@ -624,12 +624,6 @@ function vote(arrow) {
 function updateVote(data, id, type) {
 
     $("#" + type + "_vote_total_" + id).text(data.total);
-    
-    console.log([1,5]);
-    console.log(data);
-    console.log(is_admin);
-    console.log(is_elite);
-
 
     var vote_block = $("#vote_" + type + "_" + id);
     var arrow_up = vote_block.find(".arrow_up");

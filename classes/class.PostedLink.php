@@ -375,8 +375,9 @@ class PostedLink extends BaseObject {
             $vote = new VoteContest($entity_id, $this->get_data('user_id'));
             $vote->save(1);
         } else {
+            //this controls the vote total for a given post.
             $vote = new Vote($entity_id, $this->post_type, get_user_id());
-            $vote->set_user_vote(1);
+            $vote->set_user_vote(upvote_value());
         }
 
         $this->clear_vendors();
