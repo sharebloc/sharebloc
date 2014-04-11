@@ -113,9 +113,10 @@
                 </div>
             </div>
             {/if}*}
-            {if $show_contest_widget}
+<!--             {*AK 2014-04-10 removing widget}
+            {*if $show_contest_widget}
                 {include file='contest_marketo/contest_widget_block.tpl'}
-            {/if}
+            {/if*} -->
             {if $show_content_type!='connections' && $tag.followers}
                 <div class="follows_btn_div">
                     <a class="post_type_link fleft active">Followers<span class="divider"> · </span><span data-followersCount='{$tag.followers_count}' id='followers_count'>{$tag.followers_count}</span></a>
