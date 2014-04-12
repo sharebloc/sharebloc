@@ -17,6 +17,7 @@ $base_url = Utils::getBaseUrl();
 $smarty_params = array(
     'is_admin' => Utils::isAdmin(),
     'logged_in' => Utils::isLoggedIn(),
+    'is_elite' => Utils::isElite(),
     'base_url' => $base_url,
     'shouldUseCssRefresh' => Utils::shouldUseCssRefresh(),
 );

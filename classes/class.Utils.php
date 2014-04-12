@@ -1317,6 +1317,29 @@ function is_admin() {
     return false;
 }
 
+function is_elite() {
+    if (is_logged_in() && $_SESSION['user_info']['f_elite'] == 1) {
+        return true;
+    }
+
+    return false;
+}
+
+//pull the value each up vote should get
+function upvote_value() {
+    if (!is_logged_in() && !is_contest_voter()) {
+        return null;
+    }
+
+    if (empty($_SESSION['user_info']['upvote_value'])) {
+        Log::$logger->error("Empty upvote value while logged_in value is true");
+        return null;
+    }
+
+    return intval($_SESSION['user_info']['upvote_value']);
+}
+
+
 function get_user_id() {
     if (!is_logged_in() && !is_contest_voter()) {
         return null;

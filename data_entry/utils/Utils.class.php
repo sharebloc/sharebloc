@@ -271,10 +271,24 @@ class Utils {
         if ($user = self::sVar('user')) {
             if ($user['is_admin'] == 1) {
                 return true;
+
             }
+
         }
         return false;
     }
+//To do: figure out if $user[is_elite] exists
+    public static function isElite() {
+
+        if ($user = self::sVar('user')) {
+            if ($user['is_elite'] == 1) {
+                return true;
+            }
+            
+        }
+        return false;
+    }
+
 
     public static function redirectIfNotLoggedInAsAdmin() {
         if (self::isLoggedIn() && self::isAdmin()) {

@@ -296,7 +296,7 @@ class DBUtils {
         $result = self::executeQueryArray($sql);
         return $result;
     }
-
+///AK 2014/04/10 -- note this appears to be for data entry not main product
     public static function getUserInfoByEmail($email) {
         $sql = sprintf("SELECT id, email, password, company, is_active, is_admin
                         FROM data_users

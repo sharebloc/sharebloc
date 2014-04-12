@@ -932,11 +932,11 @@ class Gate {
         }
 
         $vote_value = intval($vote_data['vote_value']);
-        if ($vote_value > 1) {
-            $vote_value = 1;
-        } elseif($vote_value < 1) {
-            $vote_value = -1;
-        }
+        // if ($vote_value > 1) {
+        //     $vote_value = 1;
+        // } elseif($vote_value < 1) {
+        //     $vote_value = -1;
+        // }
 
         $vote = new Vote($vote_data['entity_id'], $vote_data['type'], self::$user_id);
         $result = $vote->process_vote($vote_value);

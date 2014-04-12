@@ -1,0 +1,1 @@
+ALTER TABLE user ADD COLUMN upvote_value tinyint(4) NOT NULL default ‘1’;
