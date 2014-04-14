@@ -21,12 +21,13 @@
                             {/if}
                         </span>
                     {/if}
-                    {if $post.categories}
-                        to <a class="subcategory_link" href="{$post.categories[0].my_url}" target="_blank">{$post.categories[0].tag_name}</a>
-                    {/if}
                     {if isset($post.user.f_elite) && $post.user.f_elite}
                         <span class="elite">Elite</span>
                     {/if}
+                    {if $post.categories}
+                        to <a class="subcategory_link" href="{$post.categories[0].my_url}" target="_blank">{$post.categories[0].tag_name}</a>
+                    {/if}
+
                     {if $logged_in}
                         <a class="back_to_feed_link" href="/">Back to Feed</a>
                     {/if}
