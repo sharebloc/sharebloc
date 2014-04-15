@@ -15,7 +15,7 @@
                 <a href="/guidelines/" class="{if $active_submenu=='guidelines'}active{/if}">Guidelines</a>
                 {if $logged_in}
                     <a href="#" id="invites_link" class="{if $active_submenu=='invites'}active{/if}">Invites</a>
-                    <a href="/content_marketing_nation" class="{if $active_submenu=='contest'}active{/if}">Contest</a>
+                    <!-- <a href="/content_marketing_nation" class="{if $active_submenu=='contest'}active{/if}">Contest</a> -->
                 {/if}
         </div>
     </div>
