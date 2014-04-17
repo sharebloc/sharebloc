@@ -38,11 +38,18 @@
         <div class="clear"></div>
         <hr>
 
-        <br><br><b>CONTEST ending email for current user:</b><br><br>
+        <br><br><b>Funnelholic webinar:</b><br><br>
+        <a target='_blank' href='{$url_prefix}funnelholic_webinar{$curr_user_part}'>Current user (show only)</a><br><br>
+        <a target='_blank' href='{$url_prefix}funnelholic_webinar{$curr_user_part}{$send_email_part}'>Current user (send email)</a><br><br>
+        <a target='_blank' href='{$url_prefix}funnelholic_webinar{$norm_work_part}'>All users (show only)</a><br><br>
+        <hr>
+
+         <br><br><b>CONTEST ending email for current user:</b><br><br>
         <a target='_blank' href='{$url_prefix}marketo_contest_end{$curr_user_part}'>Current user (show only)</a><br><br>
         <a target='_blank' href='{$url_prefix}marketo_contest_end{$curr_user_part}{$send_email_part}'>Current user (send email)</a><br><br>
         <a target='_blank' href='{$url_prefix}marketo_contest_end{$norm_work_part}'>All users (show only)</a><br><br>
         <hr>
+
 
         <br><br><b>Testing weekly email:</b><br><br>
         <a target='_blank' href='{$url_prefix}weekly{$curr_user_part}'>Current user (show only)</a><br><br>
