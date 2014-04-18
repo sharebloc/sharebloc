@@ -809,8 +809,8 @@ class FrontStream {
 
     static function getViewsofPosts($post_data) {
         global $db;
-        $views = 0;
-        $link_name = $post_data['title_url'];
+        $views = array();
+        $link_name = substr($post_data['title_url'], 0, 40);
         $sql = sprintf("
             SELECT COALESCE(count(id), 0) as views
             FROM track 
@@ -818,11 +818,11 @@ class FrontStream {
             $link_name);
         $result = $db->query($sql);
         if(is_array($result)){
-            $views = $result[0];
+            $views = $result[0]['views'];
             return $views;
         }
         
-        return $sql;
+        return $views;
 
     }
 

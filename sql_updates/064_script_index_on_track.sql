@@ -1,0 +1,1 @@
+create index script_name on track (script_name);
