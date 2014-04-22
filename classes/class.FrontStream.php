@@ -727,7 +727,7 @@ class FrontStream {
 
         $post_data['seo'] = self::getPostSeoData($post_data);
 
-
+        $post_data['views'] = self::getViewsofPosts($post_data);
 
         return $post_data;
     }
@@ -805,6 +805,25 @@ class FrontStream {
         */
 
         return $seo;
+    }
+
+    static function getViewsofPosts($post_data) {
+        global $db;
+        $views = array();
+        $link_name = substr($post_data['title_url'], 0, 40);
+        $sql = sprintf("
+            SELECT COALESCE(count(id), 0) as views
+            FROM track 
+            WHERE script_name = '%s'",
+            $link_name);
+        $result = $db->query($sql);
+        if(is_array($result)){
+            $views = $result[0]['views'];
+            return $views;
+        }
+        
+        return $views;
+
     }
 
     static function prepareComments($comments) {

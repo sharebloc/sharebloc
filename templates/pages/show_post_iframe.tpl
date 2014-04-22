@@ -24,10 +24,7 @@
                     {if isset($post.user.f_elite) && $post.user.f_elite}
                         <span class="elite">Elite</span>
                     {/if}
-                    {if $post.categories}
-                        to <a class="subcategory_link" href="{$post.categories[0].my_url}" target="_blank">{$post.categories[0].tag_name}</a>
-                    {/if}
-
+                    <a id="iframe_close_lnk" href="{$post.url}" class="iframe_close_lnk">Remove Frame X </a>
                     {if $logged_in}
                         <a class="back_to_feed_link" href="/">Back to Feed</a>
                     {/if}
@@ -37,26 +34,18 @@
                     <a id="tweet_btn" class="comments_link tweet_link share_post_btn no_padding" data-text="{$text_to_share_twitter|cat:" via @ShareBloc"}" data-provider="twitter" data-shareUrl="{$base_url}{$post.title_url}">
                         <img class="tweet_img" src="/images/twitter.png" alt="Tweet">
                         Tweet
-                    </a>
-                    {* todo make reposts block common *}
-                    {if !$post.f_contest}
-                        <a class="comments_link repost_link {if $post.reposted_by_curr_user || $post.curr_user_is_author}reposted{/if}" href="#">
-                            {if $post.reposted_by_curr_user}
-                                Reposted
-                            {elseif $post.curr_user_is_author}
-                                Reposts
-                            {else}
-                                Repost
-                            {/if}
-                            {if $post.reposters || $post.curr_user_is_author}
-                                ({$post.reposters|count})
-                            {/if}
-                        </a>
-                    {/if}
+                    </a>               
                     <a class="comments_link" href="{$post.my_url}" target="_blank">Discuss
                         {if $post.comment_count > 0}({$post.comment_count}){/if}
                     </a>
-                    <a id="iframe_close_lnk" href="{$post.url}" class="iframe_close_lnk">Remove Frame X </a>
+                    <span class="iframe_views">
+                    {$post.views}
+                    {if $post.views == 1}
+                        View
+                    {else}
+                        Views
+                    {/if}
+                    </span>
                 </div>
             </div>
         </div>
