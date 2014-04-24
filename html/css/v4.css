@@ -962,6 +962,44 @@ body, .bottom_filler, .left_rail {
     margin-left: 700px;
 }
 
+.right_rail_box {
+    background-color: #ffffff;
+    border: 1px solid #cacaca;
+    padding:15px;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.calendar_block {
+    color: #2f343d;
+    width: 285px;
+    vertical-align: middle;
+}
+
+.calendar_text {
+    color: #2f343d;
+    font-size: 14px;
+    line-height: 32px;
+    width: 245px;
+    float:right;
+}
+
+.twitter_follow_bloc {
+    color: #2f343d;
+    font-size: 14px;
+    line-height: 32px;
+    width: 245px;
+    float:right;
+}
+
+.follow_text {
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2f343d;
+    padding-bottom: 5px;
+}
+
 .action_front_link {
     background-color: #8D8D8D;
     color: #ffffff;
@@ -1019,6 +1057,7 @@ body, .bottom_filler, .left_rail {
     font-weight: 700;
     margin-top: 3px;
 }
+
 
 
 /* SHOW POST PAGE */
@@ -2016,6 +2055,7 @@ font-weight: bold;
 .uploadifyQueue {
     display:none;
 }
+
 
 /* USER PAGE */
 .profile_summary {

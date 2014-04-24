@@ -104,6 +104,8 @@
     <div class="right_rail">
         <div class="right_rail_content">
             {include file='components/front/front_right_post_buttons.tpl' tag_id=$tag.tag_id}
+            {include file='components/front/front_right_calendar.tpl'}
+            {include file='components/front/front_right_twitter.tpl'}
 {*   removed for now https://vendorstack.atlassian.net/browse/VEN-315              *}
 {*            {if ($tag.description)}
             <div class="profile_summary">
