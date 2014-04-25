@@ -6,7 +6,7 @@ require_once('class.Question.php');
 
 class FrontStream {
     const POSTS_ON_PAGE = 20;
-    const DECAY_TIME_CONSTANT_SECONDS = 45000; // 12.5 hours * 60 * 60
+    const DECAY_TIME_CONSTANT_SECONDS = 57600; // 16 hours * 60 * 60
 
     // https://vendorstack.atlassian.net/browse/VEN-199
     const DECAY_VOTES_MULTIPLIER = 7; // should be corrected experimentally after trying on live
