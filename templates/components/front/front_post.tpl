@@ -4,13 +4,13 @@
         <div class="post_header_div">
             {if $post.logo_url_full}
                 <div class="front_image_div" style="background-image: url('{$post.logo_url_full}')">
-                    <a class="front_image_link trackedOutboundLink" href="{$post.title_url}" target="_blank"></a>
+                    <a class="front_image_link trackedOutboundLink" href="{$post.title_url}" rel="nofollow" target="_blank"></a>
                 </div>
             {/if}
             <div class="post_details">
                 <div class="post_title_div">
                     <span class="post_title">
-                        <a href="{$post.title_url}" target="_blank" class="trackedOutboundLink">
+                        <a href="{$post.title_url}" target="_blank" class="trackedOutboundLink" rel="nofollow">
                             {if empty($for_show_post)}
                                 {$post.title|escape|truncate:100:" (...)"}
                             {else}
@@ -19,7 +19,7 @@
                         </a>
                     </span>
                     {if $post.outer_link_host}
-                        <div class="post_outer_link_div"><a href="{$post.outer_link_host}" class="post_outer_link trackedOutboundLink" target="_blank">({$post.outer_link_host})</a></div>
+                        <div class="post_outer_link_div"><a href="{$post.outer_link_host}" class="post_outer_link trackedOutboundLink" target="_blank" rel="nofollow">({$post.outer_link_host})</a></div>
                     {/if}
                     <div class="post_badges_div">
                         {if $post.categories}
@@ -90,7 +90,7 @@
                                 Tweet
                             </a>
                         {else}
-                            <a class="comments_link tweet_link share_post_btn no_padding" data-text="{$text_to_share_twitter|cat:" via @ShareBloc"}" data-provider="twitter" data-shareUrl="{$base_url}{$post.title_url}">
+                            <a class="comments_link tweet_link share_post_btn no_padding" data-text="{$text_to_share_twitter|cat:" via @ShareBloc"}" data-provider="twitter" data-shareUrl="{$base_url}{$post.title_url}" rel="nofollow">
                                 <img class="tweet_img" src="/images/twitter.png" alt="Tweet">
                                 Tweet
                             </a>
