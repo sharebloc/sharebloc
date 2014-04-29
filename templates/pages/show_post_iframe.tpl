@@ -24,7 +24,7 @@
                     {if isset($post.user.f_elite) && $post.user.f_elite}
                         <span class="elite">Elite</span>
                     {/if}
-                    <a id="iframe_close_lnk" href="{$post.url}" class="iframe_close_lnk">Remove Frame X </a>
+                    <a id="iframe_close_lnk" href="{$post.url}" class="iframe_close_lnk" rel-"nofollow">Remove Frame X </a>
                     {if $logged_in}
                         <a class="back_to_feed_link" href="/">Back to Feed</a>
                     {/if}

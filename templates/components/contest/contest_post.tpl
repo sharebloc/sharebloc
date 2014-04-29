@@ -19,7 +19,7 @@
             <div class="post_details {if !$post.logo_url_full}wide{/if}">
                 <div class="post_title_div">
                     <span class="post_title">
-                        <a href="{$post.title_url}" target="_blank" class="trackedOutboundLink">
+                        <a href="{$post.title_url}" target="_blank" class="trackedOutboundLink" rel="nofollow">
                             {$post.title|escape}
                         </a>
                     </span>
@@ -29,7 +29,7 @@
                         {/if}
                         {if $post.outer_link_host}
                             {if !empty($post.author_name)}on{else}On{/if}
-                            <a href="{$post.outer_link_host}" class="post_outer_link trackedOutboundLink" target="_blank">{$post.outer_link_host}</a>
+                            <a href="{$post.outer_link_host}" class="post_outer_link trackedOutboundLink" target="_blank" rel="nofollow">{$post.outer_link_host}</a>
                         {/if}
                         {if $post.subcategories}
                             to
@@ -58,10 +58,10 @@
 
             {if !empty($post.user.facebook) || !empty($post.user.twitter) || !empty($post.user.linkedin) || !empty($post.user.google_plus)}
                 <span class="user_links">
-                    {if !empty($post.user.facebook)}<a href="{$post.user.facebook}" class="trackedOutboundLink"><img src="/images/icons/facebookicon.png" alt="Facebook"></a>{/if}
-                    {if !empty($post.user.twitter)}<a href="{$post.user.twitter}" class="trackedOutboundLink"><img src="/images/icons/twittericon.png" alt="Twitter"></a>{/if}
-                    {if !empty($post.user.linkedin)}<a href="{$post.user.linkedin}" class="trackedOutboundLink"><img src="/images/icons/linkedinicon.png" alt="LinkedIn"></a>{/if}
-                    {if !empty($post.user.google_plus)}<a href="{$post.user.google_plus}" class="trackedOutboundLink"><img src="/images/icons/googleplusicon.png" alt="Google+"></a>{/if}
+                    {if !empty($post.user.facebook)}<a href="{$post.user.facebook}" class="trackedOutboundLink" rel="nofollow"><img src="/images/icons/facebookicon.png" alt="Facebook"></a>{/if}
+                    {if !empty($post.user.twitter)}<a href="{$post.user.twitter}" class="trackedOutboundLink" rel="nofollow"><img src="/images/icons/twittericon.png" alt="Twitter"></a>{/if}
+                    {if !empty($post.user.linkedin)}<a href="{$post.user.linkedin}" class="trackedOutboundLink" rel="nofollow"><img src="/images/icons/linkedinicon.png" alt="LinkedIn"></a>{/if}
+                    {if !empty($post.user.google_plus)}<a href="{$post.user.google_plus}" class="trackedOutboundLink" rel="nofollow"><img src="/images/icons/googleplusicon.png" alt="Google+"></a>{/if}
                 </span>
                 <div class="clear"></div>
             {/if}
