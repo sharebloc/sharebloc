@@ -3,7 +3,7 @@
 <div class="iframe_page_container">
     <div id="{$post.uid}" data-postType="{$post.post_type}" data-postId="{$post.post_id}" data-entityType="post" class="post_container iframe_post">
         {include file='components/votes_block.tpl'}
-        <div id="{$post.uid}_main" class="post_main_div">
+        <div id="{$post.uid}_main" class="iframe_main_div">
             {if !empty($post.user.logo.my_url_thumb)}
                 <div class="fleft">
                     <img class="post_author_logo" src="{$post.user.logo.my_url_thumb}">
@@ -51,8 +51,13 @@
         </div>
         <div class="iframe_logo_sharebloc">
             <a href="/">
-                <img class="vslogo_header" src="/images/sharebloc_logo.png" alt="ShareBloc">
+                <img class="sharebloc_logo_header_iframe" src="/images/sharebloc_logo.png" alt="ShareBloc">
             </a>
+            <br>
+            <div class="iframe_related_link">
+                Related: 
+                <a href="{$related_content.iframe_url}">{$related_content.title}</a>
+            </div>
         </div>
         {if $contest_id == 2}
             <div class="fright">
