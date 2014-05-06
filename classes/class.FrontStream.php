@@ -154,6 +154,28 @@ class FrontStream {
         }
     }
 
+    static function getRelatedContent($post_id) {
+        $limit = 20; //to start we only need 1 related post
+        $offset = 0;
+        $feed_parameters = array();
+        $feed_parameters['type'] = 'tag_top'; //pick the top 20 posts from sharebloc
+        $content = FrontStream::getContent($limit, $offset, $feed_parameters);
+        $rand_key = array_rand($content); //pick a random one
+        $related_post = $content[$rand_key];
+        if($related_post['post_id']==$post_id) 
+        //if the suggestion is the same, pick a different one
+        {
+            if($rand_key==0) {
+                $rand_key = $rand_key + 1;
+            }
+            else{
+                $rand_key = $rand_key - 1;
+            }
+            $related_post = $content[$rand_key];
+        }
+        return $related_post;
+    }
+
     static function getContent($limit = self::POSTS_ON_PAGE, $offset = 0, $feed_parameters=array()) {
         global $db;
         $content = array();
@@ -601,6 +623,9 @@ class FrontStream {
 
         return $entity_data;
     }
+
+
+
 
     static function prepareDate($date) {
         /* Date */

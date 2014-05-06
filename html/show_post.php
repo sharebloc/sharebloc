@@ -66,6 +66,15 @@ if ($use_contest_vote && is_admin() && in_array(get_user_id(), $users_allowed_to
 $also_viewed = new AlsoViewed($post_type, $post_id);
 $also_viewed->record_visit();
 
+$related_content = array();
+if ($f_iframe) {
+    $related_content = FrontStream::getRelatedContent($post_id);
+    
+
+}
+
+
+
 $smarty_params = array(
     'post_data' => $post_data,
     'popup_tweet_link_url' => $post_data['my_url'],
@@ -83,6 +92,7 @@ $smarty_params = array(
     'show_join_widget' => 1,
     'reposted_popup_type' => Utils::unsetSVar('reposted_popup_type'),
     'f_iframe' => $f_iframe,
+    'related_content' => $related_content,
     'contest_id' => isset($contest_id) ? $contest_id : 0,
     'contest_url' => isset($contest_url) ? $contest_url : '',
 );
