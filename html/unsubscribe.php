@@ -6,7 +6,7 @@ require_once('class.Subscription.php');
 $type = get_input('type');
 $code = get_input('code');
 
-if (in_array($type, array('weekly', 'updates', 'contest', 'daily', 'suggestion'))) {
+if (in_array($type, array('weekly', 'updates', 'contest', 'daily', 'suggestion','deactivate'))) {
     $message = User::unsubscribe($type, $code);
 } elseif ($type=='subscription') {
     $message = Subscription::unsubscribe($code);

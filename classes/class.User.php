@@ -1110,7 +1110,11 @@ class User extends BaseObject {
         } elseif ($type == 'suggestion')  {
             $current_data['notify_suggestion'] = 0;
             $type_name = 'suggestion';
+        } elseif ($type == 'deactivate') {
+            $current_data['notify_suggestion'] = 0;
+            $type_name = 'deactivate';
         }
+
 
         $current_data['unsubscribe_key'] = $user->generateConfirmKey();
         $user->set($current_data);
