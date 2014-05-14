@@ -22,6 +22,14 @@ $db->query($truncsql);
 foreach ($content as $post){
 	global $db;
 	$title = $post['title'];
+	
+	if(strlen($title) > 72){
+	// if title is too long abbreviate length
+		$title = substr($title, 0, 69);
+		$title .= "...";
+	}
+
+
 	$iframe_url = $post['iframe_url'];
 	$post_id = $post['post_id'];
 	
