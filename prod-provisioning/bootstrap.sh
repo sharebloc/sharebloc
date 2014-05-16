@@ -25,6 +25,11 @@ mkdir /var/www/prod/html/screenshots
 
 chown -r www-data:www-data /var/www/prod
 
+mv /etc/mysql/my.cnf /etc/mysql/my.cnf.bak
+ln -s /var/www/prod/prod-provisioning/my.cnf /etc/mysql/my.cnf
+service mysql stop
+service mysql start 
+
 mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 ln -s /var/www/prod/prod-provisioning/nginx.conf /etc/nginx/nginx.conf
 nginx -s reload
