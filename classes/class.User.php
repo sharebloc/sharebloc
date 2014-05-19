@@ -1122,10 +1122,15 @@ class User extends BaseObject {
         if (!$user->save()) {
             return false;
         }
+        if($type =='deactivate'){
+            $message = sprintf('Your account has been marked to be deactivated.<br>If this was in error, you can email us at <a href="mailto:support@sharebloc.com">support@sharebloc.com</a>.');
 
+        }
+        else{
         $message = sprintf('You have been successfully unsubscribed from %s emails. We\'re sorry to see you go.<br>If this was in error, you can manage your email preferences <a href="%s">here</a>.',
                         $type_name,
                         $user->getUrl() . '/account?active_tab=notifications_tab');
+        } 
         return $message;
     }
 
