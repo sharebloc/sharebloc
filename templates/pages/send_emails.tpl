@@ -38,6 +38,12 @@
         <div class="clear"></div>
         <hr>
 
+        <br><br><b>Deactivation:</b><br><br>
+        <a target='_blank' href='{$url_prefix}deactivation{$curr_user_part}'>Current user (show only)</a><br><br>
+        <a target='_blank' href='{$url_prefix}deactivation{$curr_user_part}{$send_email_part}'>Current user (send email)</a><br><br>
+        <a target='_blank' href='{$url_prefix}deactivation{$norm_work_part}'>All users (show only)</a><br><br>
+        <hr>
+
         <br><br><b>Funnelholic webinar:</b><br><br>
         <a target='_blank' href='{$url_prefix}funnelholic_webinar{$curr_user_part}'>Current user (show only)</a><br><br>
         <a target='_blank' href='{$url_prefix}funnelholic_webinar{$curr_user_part}{$send_email_part}'>Current user (send email)</a><br><br>

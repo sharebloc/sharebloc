@@ -304,7 +304,7 @@ class Mailer {
         return $this->send_new($test);
     }
 
-        function sendContestEndingEmail($user_id, $test = false) {
+    function sendContestEndingEmail($user_id, $test = false) {
         $user = new User($user_id);
 
         $data = array();
@@ -323,7 +323,7 @@ class Mailer {
         return $this->send_new($test);
     }
 
-        function sendFunnelholicWebinarEmail($user_id, $test = false) {
+    function sendFunnelholicWebinarEmail($user_id, $test = false) {
         $user = new User($user_id);
 
         $data = array();
@@ -338,6 +338,24 @@ class Mailer {
         $this->smarty_params['contest_url'] = Utils::$contest_urls[Utils::CONTEST_MARKETO_ID];
 
         $this->smarty_params['subject'] = "Today is the day! Learn sales tactics that work.";
+
+        return $this->send_new($test);
+    }
+
+    function sendDeactivationEmail($user_id, $test = false) {
+        $user = new User($user_id);
+
+        $data = array();
+        $data['addressee']['first_name'] = $user->get_data('first_name');
+        $data['addressee']['last_name'] = $user->get_data('last_name');
+        $data['addressee']['email'] = $user->get_data('email');
+        $this->data = $data;
+
+        $this->initCommonSmartyParameters();
+
+        $this->smarty_params['unsubscribe_key'] = $user->get_data('unsubscribe_key');
+
+        $this->smarty_params['subject'] = "Important changes to your ShareBloc account.";
 
         return $this->send_new($test);
     }
