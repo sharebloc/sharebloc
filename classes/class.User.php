@@ -1111,7 +1111,7 @@ class User extends BaseObject {
             $current_data['notify_suggestion'] = 0;
             $type_name = 'suggestion';
         } elseif ($type == 'deactivate') {
-            $current_data['notify_suggestion'] = 0;
+            $current_data['f_deactivated'] = 1;
             $type_name = 'deactivate';
         }
 

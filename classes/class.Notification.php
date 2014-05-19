@@ -440,6 +440,19 @@ ORDER BY date_added DESC",
                                 self::$start_user_id,
                                 self::$users_limit_str);
                 break;
+            case 'deactivation':
+                 //all who don't follow sales and marketing
+                            $sql = sprintf("SELECT u.user_id
+                                FROM user u
+                                LEFT OUTER JOIN link l ON l.entity1_id=u.user_id AND l.entity1_type='user'
+                                        AND l.entity2_type='tag' AND l.entity2_id=1
+                                WHERE u.user_id>=%d
+                                AND l.entity1_id is null
+                                ORDER BY user_id
+                                %s",
+                                self::$start_user_id,
+                                self::$users_limit_str);  
+                    break;  
 
 
             default:
@@ -595,6 +608,9 @@ ORDER BY date_added DESC",
                 case 'funnelholic_webinar':
                     $result = self::prepareAndSendFunnelholicWebinarEmail($user_id);
                     break;
+                case 'deactivation':
+                    $result = self::prepareAndSendDeactivationEmail($user_id);
+                    break;       
 
             }
 
@@ -1137,6 +1153,14 @@ ORDER BY date_added DESC",
 
         return $send_result;
     }
+
+    private static function prepareAndSendDeactivationEmail($user_id) {
+        $mailer = new Mailer('deactivation');
+        $send_result = $mailer->SendDeactivationEmail($user_id, !self::$really_send_emails);
+
+        return $send_result;
+    }
+
 
 }
 
