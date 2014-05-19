@@ -736,6 +736,8 @@ body, .bottom_filler, .left_rail {
     padding-left: 15px;
     width: 628px;
 }
+
+
 .post_header_div, .comment_header_div {
     position: relative;
 }
@@ -1167,6 +1169,12 @@ body, .bottom_filler, .left_rail {
    float: left;
    margin-left: 10px;
    margin-top: 5px;
+}
+
+.iframe_main_div {
+    float: left;
+    padding-left: 15px;
+    width: 550px;
 }
 
 .iframe_post_header {

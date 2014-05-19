@@ -154,6 +154,38 @@ class FrontStream {
         }
     }
 
+    static function getRelatedContent($post_id) {
+        global $db;
+        $related_post = array();
+        $rand_key = rand(0,19);
+        $sql = sprintf("select post_id, title, iframe_url
+            from top_20_mv
+            where rank = %d;",
+            $rand_key);
+        $result = $db->query($sql);
+        $related_post = $result[0];
+        if($related_post['post_id'] == $post_id) 
+        // if the suggestion is the same, pick a different one
+        {
+            if($rand_key==0) {
+                $rand_key = $rand_key + 1;
+
+            }
+            else{
+                $rand_key = $rand_key - 1;
+            }
+            //re-run the query with new key
+            $sql = sprintf("select post_id, title, iframe_url
+            from top_20_mv
+            where rank = %d;",
+            $rand_key);
+            $result = $db->query($sql);
+            $related_post = $result[0];
+        }
+        return $related_post;
+
+    }
+
     static function getContent($limit = self::POSTS_ON_PAGE, $offset = 0, $feed_parameters=array()) {
         global $db;
         $content = array();
@@ -225,6 +257,8 @@ class FrontStream {
                         $order_sql,
                         $offset,
                         $limit);
+
+        Log::$logger->info($sql);
 
         if (Settings::DEV_MODE && false) {
             /* to debug rating algorithm */
@@ -601,6 +635,9 @@ class FrontStream {
 
         return $entity_data;
     }
+
+
+
 
     static function prepareDate($date) {
         /* Date */
