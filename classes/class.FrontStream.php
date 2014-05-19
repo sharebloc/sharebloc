@@ -258,7 +258,7 @@ class FrontStream {
                         $offset,
                         $limit);
 
-        Log::$logger->info($sql);
+        //Log::$logger->info($sql);
 
         if (Settings::DEV_MODE && false) {
             /* to debug rating algorithm */
