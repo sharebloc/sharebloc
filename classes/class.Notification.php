@@ -258,13 +258,13 @@ ORDER BY date_added DESC",
     private static function setUsersForPeriodicEmails() {
         switch (self::$mailing_list_type) {
             case 'weekly':
-                $sql = sprintf("SELECT user_id
-                                FROM user
+                $sql = sprintf("SELECT u.user_id
+                                FROM user u
                                 join link l ON l.entity1_id=u.user_id AND l.entity1_type='user'
                                     AND l.entity2_type='tag' AND l.entity2_id=1
-                                WHERE user_id>=%d
-                                    AND notify_weekly=1
-                                    AND f_contest_voter=0
+                                WHERE u.user_id>=%d
+                                    AND u.notify_weekly=1
+                                    AND u.f_contest_voter=0
 
                                 ORDER BY user_id
                                 %s",
