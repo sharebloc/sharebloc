@@ -9,7 +9,7 @@ class Settings {
     const DB_HOST = "localhost";
     const DB_USER = "root";
     const DB_PASSWORD = "sharebloc";
-    const DB_DBNAME = "sharebloc";
+    const DB_DBNAME = "sharebloc_prod";
 
     const CACHE_MEMCACHE_PORT = 11211;
     const CACHE_MEMCACHE_LIMIT = 1000;
