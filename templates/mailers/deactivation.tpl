@@ -4,7 +4,7 @@
 
 
 Thank you for being a great ShareBloc user. We started ShareBloc to provide a curation platform for all the content we consume for work. Unfortunately, we've bit off more than we can chew. Starting in June, we'll be focusing our efforts on only the <a href="http://www.sharebloc.com/blocs/sales__marketing">sales & marketing</a> community. This means we'll be shutting down the community blocs for all other cateogories, like technology and real estate.
-<br>
+<br><br>
 
 We realize that many of you aren't interested in sales & marketing. If you'd like to disable your account, <a href="{$base_url}/unsubscribe/deactivate/{$unsubscribe_key}">click this link</a> and we'll remove your account info within 48 hours. Thanks again for coming with us on this journey.
 
