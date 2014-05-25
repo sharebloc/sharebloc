@@ -92,7 +92,7 @@ function getDefaultFollowUsers() {
     $users = array();
     $default_user_emails = array('david@sharebloc.com', 'andrew@sharebloc.com');
     if (Settings::DEV_MODE) {
-        $default_user_emails = array('bear@deepshiftlabs.com', 'bearoff@ukr.net', 'bear+david_cheng@deepshiftlabs.com');
+        $default_user_emails = array('andrew@sharebloc.com');
     }
     foreach ($default_user_emails as $email) {
         $user = User::getUserByEmail($email);

@@ -21,10 +21,10 @@ if (!Utils::isConsoleCall()) {
 
 $admin_email = '';
 if (Utils::isConsoleCall()) {
-    $admin_email = 'bear@deepshiftlabs.com';
+    $admin_email = 'andrew+dev@sharebloc.com';
     if (!Settings::DEV_MODE && !Settings::SHOW_BETA_BORDER) {
         // this is the live server
-        $admin_email = 'david@sharebloc.com';
+        $admin_email = 'andrew@sharebloc.com';
     }
 }
 
