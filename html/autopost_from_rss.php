@@ -39,10 +39,10 @@ Feed::crawlRSSFeeds();
 
 $admin_emails = array();
 if (Utils::isConsoleCall()) {
-    $admin_emails[] = 'bear@deepshiftlabs.com';
+    $admin_emails[] = 'andrew+dev@sharebloc.com';
     if (!Settings::DEV_MODE && !Settings::SHOW_BETA_BORDER) {
         // this is the live server
-        $admin_emails[] = 'david@sharebloc.com';
+        //$admin_emails[] = 'david@sharebloc.com';
         $admin_emails[] = 'andrew@sharebloc.com';
     }
 }
