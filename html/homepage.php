@@ -3,7 +3,7 @@
 require_once('../includes/global.inc.php');
 require_once('class.FrontStream.php');
 
-showFrontPageForNotLoggedIn();
+//showFrontPageForNotLoggedIn();
 
 $show_popup = get_input('p');
 if ($show_popup) {
