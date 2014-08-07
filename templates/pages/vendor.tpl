@@ -99,7 +99,7 @@
                 </div>
                 {if $vendor.website}
                     <div class="user_links">
-                        <a href="{$vendor.website}" class="user_website trackedOutboundLink">{$vendor.website}</a>
+                        <a href="{$vendor.website}" class="user_website trackedOutboundLink" rel="nofollow">{$vendor.website}</a>
                         <div class="clear"></div>
                     </div>
                 {/if}

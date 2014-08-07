@@ -162,7 +162,7 @@
                     </div>
                     {if $user.website}
                         <div class="user_links">
-                            <a href="{$user.website}" class="user_website trackedOutboundLink">{$user.website}</a>
+                            <a href="{$user.website}" class="user_website trackedOutboundLink" rel="nofollow">{$user.website}</a>
                             <div class="clear"></div>
                         </div>
                     {/if}
