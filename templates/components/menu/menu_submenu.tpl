@@ -18,7 +18,18 @@
 
                     <!-- <a href="#" id="invites_link" class="{if $active_submenu=='invites'}active{/if}">Invites</a>
                      <a href="/content_marketing_nation" class="{if $active_submenu=='contest'}active{/if}">Contest</a> -->
+
                 
         </div>
+        
     </div>
+
+
 </div>
+<div class="sub_header_announcement">
+            <div class="announcement_block">
+                <a href="http://blog.sharebloc.com/post/99882229811/sharebloc-is-shutting-down/" class="announcement_link" target="_blank">
+                IMPORTANT ANNOUCEMENT: ShareBloc will be shutting down on 10/19. Click here to find out more.
+                </a>
+            </div>    
+        </div>
