@@ -342,6 +342,24 @@ class Mailer {
         return $this->send_new($test);
     }
 
+        function sendShutdownNoticeEmail($user_id, $test = false) {
+        $user = new User($user_id);
+
+        $data = array();
+        $data['addressee']['first_name'] = $user->get_data('first_name');
+        $data['addressee']['last_name'] = $user->get_data('last_name');
+        $data['addressee']['email'] = $user->get_data('email');
+        $this->data = $data;
+
+        $this->initCommonSmartyParameters();
+
+        $this->smarty_params['unsubscribe_key'] = $user->get_data('unsubscribe_key');
+
+        $this->smarty_params['subject'] = "Important News: ShareBloc is Shutting Down";
+
+        return $this->send_new($test);
+    }
+
     function sendDeactivationEmail($user_id, $test = false) {
         $user = new User($user_id);
 

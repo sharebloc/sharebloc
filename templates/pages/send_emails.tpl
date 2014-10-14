@@ -50,6 +50,12 @@
         <a target='_blank' href='{$url_prefix}funnelholic_webinar{$norm_work_part}'>All users (show only)</a><br><br>
         <hr>
 
+        <br><br><b>Shutdown Notice</b><br><br>
+        <a target='_blank' href='{$url_prefix}shutdown_notice{$curr_user_part}'>Current user (show only)</a><br><br>
+        <a target='_blank' href='{$url_prefix}shutdown_notice{$curr_user_part}{$send_email_part}'>Current user (send email)</a><br><br>
+        <a target='_blank' href='{$url_prefix}shutdown_notice{$norm_work_part}'>All users (show only)</a><br><br>
+        <hr>
+
          <br><br><b>CONTEST ending email for current user:</b><br><br>
         <a target='_blank' href='{$url_prefix}marketo_contest_end{$curr_user_part}'>Current user (show only)</a><br><br>
         <a target='_blank' href='{$url_prefix}marketo_contest_end{$curr_user_part}{$send_email_part}'>Current user (send email)</a><br><br>

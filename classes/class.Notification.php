@@ -443,6 +443,19 @@ ORDER BY date_added DESC",
                                 self::$start_user_id,
                                 self::$users_limit_str);
                 break;
+
+            case 'shutdown_notice':
+
+                            $sql = sprintf("SELECT u.user_id
+                                FROM user u
+                                WHERE u.user_id>=%d
+                                AND notify_product_update=1
+                                ORDER BY user_id
+                                %s",
+                                self::$start_user_id,
+                                self::$users_limit_str);
+                break;
+    
             case 'deactivation':
                  //all who don't follow sales and marketing
                             $sql = sprintf("SELECT u.user_id
@@ -611,6 +624,9 @@ ORDER BY date_added DESC",
                 case 'funnelholic_webinar':
                     $result = self::prepareAndSendFunnelholicWebinarEmail($user_id);
                     break;
+                case 'shutdown_notice':
+                    $result = self::prepareAndSendShutdownNoticeEmail($user_id);
+                    break;                
                 case 'deactivation':
                     $result = self::prepareAndSendDeactivationEmail($user_id);
                     break;       
@@ -1150,9 +1166,9 @@ ORDER BY date_added DESC",
         return $send_result;
     }
 
-    private static function prepareAndSendFunnelholicWebinarEmail($user_id) {
-        $mailer = new Mailer('funnelholic_webinar');
-        $send_result = $mailer->sendFunnelholicWebinarEmail($user_id, !self::$really_send_emails);
+    private static function prepareAndSendShutdownNoticeEmail($user_id) {
+        $mailer = new Mailer('shutdown_notice');
+        $send_result = $mailer->sendShutdownNoticeEmail($user_id, !self::$really_send_emails);
 
         return $send_result;
     }
