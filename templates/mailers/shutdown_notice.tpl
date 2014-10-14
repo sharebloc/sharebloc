@@ -2,13 +2,13 @@
 
 {$addressee_first_name},<br><br>
 
-We are reaching out to you to let you know that we have decided to shut down ShareBloc as of 10/19. We want to thank you so much for coming on this journey with you.
-<br>
-We've <a href="http://blog.sharebloc.com/post/99882229811/sharebloc-is-shutting-down">posted to our blog</a> information about the shutdown. 
-<br>
-If you have any questions or concerns about the shutdown, please don't hesitate to reach out to us at support@sharebloc.com.
-<br>
-Thank you for all your support.
+We are reaching out to let you know that we have decided to shut down ShareBloc as of 10/19. We're so greatful for the community that diligently posted, voted and shared awesome content. 
+<br><br>
+Detailed information about the shut down can be found <a href="http://blog.sharebloc.com/post/99882229811/sharebloc-is-shutting-down">posted to our blog</a>.
+<br><br>
+If you have any questions or concerns, please contact support@sharebloc.com.
+<br><br>
+Thank you so much for coming on this journey with us.
 
 <br><br>
 Cheers,<br>
